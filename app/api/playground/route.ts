@@ -2,19 +2,14 @@ import { NextResponse } from "next/server";
 import { querySimple } from "@/ai/query";
 
 import { supabase } from "@/lib/supabase";
-import {
-  LessonPlanGenerationSchema,
-  generateLessonPlanStr,
-} from "@/lib/validations/generate";
 
 export async function POST(request: Request) {
-  const params = (await request.json()) as LessonPlanGenerationSchema;
-  const query = generateLessonPlanStr(params);
+  const { query } = await request.json();
   const content = await querySimple(query);
 
   const { data, error } = await supabase
     .from("generated")
-    .insert({ params, query, content })
+    .insert({ params: {}, query, content })
     .select();
 
   if (error) {

@@ -13,5 +13,9 @@ export const siteConfig = {
       title: "Lessons",
       href: "/lessons",
     },
+    {
+      title: "Query playground",
+      href: "/lessons/playground",
+    },
   ],
 };

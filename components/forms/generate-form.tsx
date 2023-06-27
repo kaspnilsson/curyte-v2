@@ -36,6 +36,7 @@ import {
 import { OAuthSignIn } from "../auth/oauth-signin";
 import { Icons } from "../icons";
 import { PasswordInput } from "../password-input";
+import LessonSkeleton from "../skeletons/lesson-skeleton";
 import {
   Card,
   CardContent,
@@ -115,28 +116,8 @@ export function GenerateForm() {
             Our AI is hard at work, but this may take up to 5 minutes.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-4">
-          <div className="space-y-2">
-            <Skeleton className="h-16 w-[80%]" />
-            <Skeleton className="h-4 w-[40%]" />
-          </div>
-          <div className="mt-2 space-y-2">
-            <Skeleton className="h-4 w-[25%]" />
-            <Skeleton className="h-4 w-[20%]" />
-          </div>
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-[25%]" />
-            <Skeleton className="h-4 w-[20%]" />
-          </div>
-          <Skeleton className="mt-8 h-8 w-[60%]" />
-          <div className="mt-4 space-y-2">
-            <Skeleton className="h-4 w-[25%]" />
-            <Skeleton className="h-4 w-[20%]" />
-          </div>
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-[25%]" />
-            <Skeleton className="h-4 w-[20%]" />
-          </div>
+        <CardContent>
+          <LessonSkeleton />
         </CardContent>
       </Card>
     );
