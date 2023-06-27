@@ -30,20 +30,20 @@ export default function SignUpPage() {
         </CardHeader>
         <CardContent className="grid gap-4">
           <OAuthSignIn />
-          {/* <div className="relative">
+          <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">
+              <span className="bg-white px-2 text-stone-500 dark:bg-stone-950  dark:text-stone-400">
                 Or continue with
               </span>
             </div>
           </div>
-          <SignUpForm /> */}
+          {/* <SignUpForm /> */}
         </CardContent>
         <CardFooter className="grid gap-4">
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-stone-500  dark:text-stone-400">
             Already have an account?{" "}
             <Link
               aria-label="Sign in"
