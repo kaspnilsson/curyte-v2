@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,6 +10,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { toast } from "sonner";
 import type { z } from "zod";
 
+import { promisifyLessonIdStream } from "@/lib/rpc/read-lesson-stream";
 import {
   LessonPlanGenerationSchema,
   generateSchema,
@@ -88,21 +89,24 @@ export function GenerateForm() {
       hasQuiz: false,
     },
   });
-  //   const { isLoaded, signIn, setActive } = useSignIn();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const mounted = useRef(true);
 
   async function onSubmit(data: LessonPlanGenerationSchema) {
     try {
       setLoading(true);
-      const res = await fetch("/api/generate", {
+
+      const response = await fetch("/api/generate", {
         method: "POST",
         body: JSON.stringify(data),
-      }).then((res) => res.json());
-      router.push(`/lessons/${res.id}`);
+      });
+
+      const lessonId = await promisifyLessonIdStream(response);
+      router.push("/lessons/" + lessonId);
     } catch (e) {
       toast.error("Something went wrong, please try again: " + e);
-    } finally {
+      console.error(e);
       setLoading(false);
     }
   }
@@ -231,19 +235,6 @@ export function GenerateForm() {
                 </FormItem>
               )}
             />
-            {/* <FormField
-          control={form.control}
-          name="lessonStandard"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Lesson standard</FormLabel>
-              <FormControl>
-                <Input placeholder="E.g. 'Texas'" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        /> */}
             <Button>
               Generate
               <span className="sr-only">Generate</span>
