@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Key, Link } from "lucide-react";
@@ -88,7 +89,7 @@ export function GenerateForm() {
   });
   //   const { isLoaded, signIn, setActive } = useSignIn();
   const [loading, setLoading] = useState(false);
-  const [content, setContent] = useState("");
+  const router = useRouter();
 
   async function onSubmit(data: LessonPlanGenerationSchema) {
     try {
@@ -97,24 +98,12 @@ export function GenerateForm() {
         method: "POST",
         body: JSON.stringify(data),
       }).then((res) => res.json());
-      setContent(res.content);
+      router.push(`/lessons/${res.id}`);
     } catch (e) {
       toast.error("Something went wrong, please try again: " + e);
     } finally {
       setLoading(false);
     }
-  }
-
-  if (content) {
-    return (
-      <Card>
-        <CardContent className="mt-6 grid gap-4">
-          <ReactMarkdown className="prose prose-sm prose-stone max-w-none dark:prose-invert md:prose-base">
-            {content}
-          </ReactMarkdown>
-        </CardContent>
-      </Card>
-    );
   }
 
   if (loading) {

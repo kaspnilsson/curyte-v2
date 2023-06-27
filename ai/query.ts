@@ -10,7 +10,7 @@ import { PineconeStore } from "langchain/vectorstores/pinecone";
 import { questionPrompt, refinePrompt } from "./openai";
 import { getStandardsIndex } from "./pinecone";
 
-export async function query(query: string) {
+export async function querySimple(query: string) {
   const pineconeIndex = await getStandardsIndex();
   console.time("Total runtime");
   console.time("Pinecone Initialization");

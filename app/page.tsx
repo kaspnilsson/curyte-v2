@@ -2,14 +2,6 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Form } from "@/components/ui/form";
 import { GenerateForm } from "@/components/forms/generate-form";
 
@@ -25,17 +17,6 @@ export default function IndexPage() {
         </p>
       </div>
       <GenerateForm />
-      {/* <Card>
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Sign in</CardTitle>
-          <CardDescription>
-            Choose your preferred sign in method
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-4">
-          
-        </CardContent>
-      </Card> */}
     </section>
   );
 }

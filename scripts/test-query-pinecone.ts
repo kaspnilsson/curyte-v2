@@ -5,7 +5,7 @@
  */
 import { questionPrompt, refinePrompt } from "@/ai/openai";
 import { getStandardsIndex } from "@/ai/pinecone";
-import { query } from "@/ai/query";
+import { querySimple } from "@/ai/query";
 import * as dotenv from "dotenv";
 import { RetrievalQAChain, loadQARefineChain } from "langchain/chains";
 import { ChatOpenAI } from "langchain/chat_models/openai";
@@ -23,7 +23,7 @@ const TEST_QUERIES = [
 dotenv.config();
 
 async function runQuery(index = 0) {
-  await query(TEST_QUERIES[index]);
+  await querySimple(TEST_QUERIES[index]);
 }
 
 // let promise: Promise<any> | undefined;
