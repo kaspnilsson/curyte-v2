@@ -1,0 +1,1410 @@
+[
+  {
+    "label": "Ohio’s Learning Standards for Computer Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/OCS_Adopted-2022.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Kindergarten-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-1-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-2-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-3-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-4-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-5-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-6-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-7-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-8-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 9-12 Foundational Level",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-9-12F-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 9-12 Advanced Level",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/2022-Grade-9-12Adv-CS-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Complete K - 12 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/Computer-Science-Standards_Adopted-2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr4.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Kindergarten.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr6.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr7.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr3.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Complete K - 12 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/Computer-Science-Standards_Adopted-2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 9-12 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Ohio-s-Learning-Standards-in-Computer-Science/ComputerScienceStandards_Gr9-12.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "an updating process",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Standard-Revision-Overview/StandardsRevisonProcess.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Learning Standards for English Language Arts (adopted 2017)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/ELA-Learning-Standards-2017.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/ELA-Learning-Standards-2017-Section-508.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Research Supporting Key Elements of the Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Appendix_A-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-Appendix-A-Accessible.pdf.aspx"
+  },
+  {
+    "label": "Text Exemplars and Sample Performance Tasks",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Appendix-B.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-Appendix-B-Accessible.pdf.aspx"
+  },
+  {
+    "label": "Samples of Student Writing",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Appendix_C.pdf.aspx"
+  },
+  {
+    "label": "Reading Literature",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/ELA-RL-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-RL-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Reading Informational",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/ELA-RI-Vertical-Alignment.pdf.aspx"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/508-ELA-RI-Vertical-Alignment.pdf.aspx"
+  },
+  {
+    "label": "Reading Foundations",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/ELA-RF-Vertical-Alignment.pdf.aspx"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-RF-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Writing",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/ELA-W-Vertical-Alignment.pdf.aspx"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-W-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Speaking and Listening",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/ELA-SL-Vertical-Alignment.pdf.aspx"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-SL-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Language",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/ELA-L-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-L-Vertical-Alignment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Standards Revision Highlights for English Language Arts",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/ELA-Standards-Revision-Highlights.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-Standards-Revision-Highlights.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Determining Theme Standard Guidance",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Determining-Theme-Standard-Guidance.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Types of Summaries Standard Guidance",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Types-of-Summaries-Standard-Guidance.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/508-Types-of-Summaries-Standard-Guidance.pdf.aspx"
+  },
+  {
+    "label": "Establishing a Thesis Standard Guidance",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Establishing-a-Thesis-Standard-Guidance.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Benchmarking Report",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Draft-IB-Report.pdf.aspx"
+  },
+  {
+    "label": "Three-Year View (2017-2019) of Suggested Transition Activities",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/TRANSITION_THREE-YEAR_ELA.pdf.aspx"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/508-ELA-Suggested-Transition-Timeline.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio’s K-12 English Language Arts Learning Standards Crosswalk",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/New-Ohio-Learning-Standards-Crosswalk-for-ELA-2017.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Section 508 Version",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/English-Language-Arts-Standards/Transitioning-to-the-2017-Learning-Standards-in-En/508-ELA-Standards-Crosswalk.pdf.aspx"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Learning Standards in Financial Literacy",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/FLFinalStandards060518.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Model Curriculum in Financial Literacy",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/FinalFLMCAdoptedNov2019.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Educator License Validation in Financial Literacy Instruction",
+    "href": "https://public.education.ohio.gov/StateBoardBooks/2023%20-%20Board%20Books/February%20-%202023/Licensure%20and%20Professional%20Supports%20Committee/05a_Memo%20Draft_OAC%203301-24-30%20Financial%20Literacy%20License%20Validation.pdf"
+  },
+  {
+    "label": "Committee Roster",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/Comm-members-and-organizations-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Agenda",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/Participant-Agenda-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Minutes",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/March-1-FL-Licensure-Validation-Advisory-Comm-notes.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Slide Deck",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/FL-licensure-mtg-3-1-22-slides.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Agenda",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/May-24-fin-lit-validation-agenda.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Minutes",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/Financial-Literacy-Licensure-Advisory-Committee-Meeting-Notes-2-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Draft Licensure Language",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/Financial-Literacy-Licensure-Validation-Rule-Draft.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Slide Deck",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Financial-Literacy/Financial-Literacy-Standards/FLLW-5-24-22-presentation-w-notes-002.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Library Guidelines for Librarians",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Library-Guidelines/Library_Guidelines_Librarian.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Library Guidelines for Learners",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Library-Guidelines/Library_Guidelines_Learners.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Library Guidelines Appendix",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Library-Guidelines/LG_Appendix.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "2003 Library Guideline Benchmarks and Alignments",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Library-Guidelines/2003-Library-Guidelines-and-Resources.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Resources",
+    "href": "http://education.ohio.gov/getattachment/Topics/Academic-Content-Standards/Library-Guidelines/Resources-225-270.pdf.aspx"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Three-Year View (2017-2019) of Suggested Transition Activities for Mathematics",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/TRANSITION_MATH.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Learning Standards for Mathematics (adopted 2017)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-2017.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "2010 Mathematics Standards with 2017 Revision Comparison",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Math-Standards-Comparison.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Overview - Student Readiness Toolkit for Mathematics",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Math-Student-Readiness-Toolkit-Overview.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Preparing for Instruction",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Preparing-for-Instruction-after-COVID-19.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "K-8 Learning Progression",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Ohio-s-K-8-Learning-Progressions.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Color Coded K-5 Learning Progression",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Color-Coded-K-5-Learning-Progressions.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 6-8 Learning Progressions by Topic",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Grades-6-8-Progressions-by-Topic.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8-Geometry Learning Progressions by Topic",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Grade-8-Geometry-Learning-Progressions-by-Topic.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "K-8 Critical Areas of Focus",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/K-8-Critical-Areas-of-Focus-3-7-17.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Kindergarten.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-6.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-7.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-3.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4 Standards",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-Standards-Grade-4.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "K-8 Learning Progressions",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Ohio-s-K-8-Learning-Progressions.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Gap Analysis Introduction",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Gap-Analysis-Intro.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "K-8 Critical Areas of Focus",
+    "href": "http://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/K-8-Critical-Areas-of-Focus-3-7-17.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Compacted Standards in Middle School",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/CompactedStandards_MS.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/ALGEBRA-1-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Geometry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/GEOMETRY-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-1-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATH-2-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 2/Math 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/ALGEBRA-2-MATH-3-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Data Science Foundations",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/DSF-MATH-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Advanced Quantitative Reasoning",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Advanced-Quantitative-Reasoning-Math-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Statistics and Probability",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/SP-MATH-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "High School\\nGap Analysis Introduction",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/HS-Gap-Analysis-Intro.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 1\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/ALGEBRA-1-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Geometry\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/GEOMETRY-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 1\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATHEMATICS-1-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 2\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/MATHEMATICS-2-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 2/Math 3\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Algebra-2-Math-3-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Statistics and Probability\\nCritical Area of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/SP-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Advanced Quantitative Reasoning\\nCritical Area of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/AQR-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Data Science Foundations\\nCritical Areas of Focus",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/DSF-CAF.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Mathematics Standards Revision Highlights",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/Math-Learning-Standards-Revisions-Highlights.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Guidelines for Assessment and Instruction in Statistics Education (GAISE) Report",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Ohio-s-Learning-Standards-in-Mathematics/gaiseprek-12_full.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Pre-K–12 GAISE II",
+    "href": "https://www.amstat.org/asa/files/pdfs/GAISE/GAISEIIPreK-12_Full.pdf"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "National Standards for K-12 Physical Education",
+    "href": "https://www.shapeamerica.org//standards/upload/national-standards-flyer-rev.pdf"
+  },
+  {
+    "label": "Ohio's Learning Standards for Physical Education",
+    "href": "http://education.ohio.gov/getattachment/Topics/Ohios-Learning-Standards/Physical-Education/Updated-Physical-Education-Standards-Evaluations-2/Updated-Physical-Education-Standards.pdf.aspx"
+  },
+  {
+    "label": "Philosophy and Guiding Principles",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Physical-Education/Philosophy-and-Guiding-Principles.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Glossary",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Physical-Education/Glossary.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio’s Learning Standards for Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/SciFinalStandardsMC060719.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio’s Learning Standards for Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/SciFinalStandardsMC060719.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Nature of Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/The-Nature-of-Science.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Final-Kindergarten-Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Final-Physical-Science-Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade K",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Kindergarten.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-1.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-2.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-3.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-4.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-5.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-6.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-7.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-8.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physical-Science.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Biology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Biology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Chemistry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Chemistry.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Environmental Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Environmental-Science.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physics",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physics.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Geology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physical-Geology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Human Anatomy and Physiology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Human-Anatomy-and-Physiology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "K-12",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-K-12.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Learning Standards for Social Studies (Jan 2019)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Ohio-s-Learning-Standards-for-Social-Studies/SSFinalStandards01019.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "The 2017 Ohio Learning Standards for Technology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Ohios-Learning-Standards-for-Technology/The-2017-Ohio-Learning-Standards-in-Technology.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Advisory and Working Group Members",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Ohios-Learning-Standards-for-Technology/2017-Ohio-Learning-Standards-in-Technology-Advisory-Committee-and-Working-Group.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Themes, Topics and Essential Questions for Novice Low - Advanced Low",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Content-Elaborations-WLC_Jan2023_DRAFT.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "What is Intercultural Competence?",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/World-Languages-and-Cultures/Model-Curriculum-for-World-Languages-and-Cultures/Instruction-and-Assessment/What-is-Interculturality.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Bloom's Taxonomy for World Languages",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Instructional-Strategies/7-Packet_2-Hedstrom_Blooms_FL.pdf.aspx"
+  },
+  {
+    "label": "Incorporating the Textbook",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Strategies_How_To_Resources_MCwebsite_may2015.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Understanding World Language Assessment",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Assessment-and-Rubrics2_Nov2022.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Using the Target Language",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Target-Language_Nov2022.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Intercultural Reflection (in English and the target language)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Intercultural_Reflection_Activities_2017-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Intercultural_-Reflection_Activities2017.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Interpersonal Strategies",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Strategies_Interpersonal_MCwebsite.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Presentational Strategies",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Strategies_Presentational_MCwebsite.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Choice Board for World Languages",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/WL-choice-board2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Teaching Grammar and Vocabulary in Context",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/Strategies_How_To_Resources_MCwebsite_may2015.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Forms vs Functions of Language",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/Model-Curriculum-for-World-Languages-and-Cultures/Instructional-Strategies/langfunctions-forms.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Integrating 21st Century Skills into World Language Lessons",
+    "href": "https://edtosavetheworld.com/wp-content/uploads/2019/03/21century_worldlanguagesmap.pdf"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intercultural_-Reflection_Activities_dec2017.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Editable Template",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intercultural_-Reflection_Activities_dec2017.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Novice - Distinguished",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intercultural_Can-Do_MC_dec2017.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Novice + Intermediate",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-Intermed_Can-Do_Statements_apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Intermediate + Advanced",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermed-Advanced_Can-Do_Statements_may2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Novice Low",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-Low-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-Low-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Novice Mid",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-Mid-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-Mid-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Novice High",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-High-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Novice-High-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Intermediate Low",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-Low-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-Low-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Intermediate Mid",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-Mid-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-Mid-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Intermediate High",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-High-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Intermediate-High-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Advanced Low",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Advanced-Low-apr2018.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": ",",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Foreign-Language/World-Languages-Model-Curriculum/World-Languages-Model-Curriculum-Framework/Expectations-for-Learning/Advanced-Low-apr2018.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Model Curriculum for Computer Science Full Document (adopted 2022)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/OCSMC_Adopted-2022.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Kindergarten.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-3.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-4.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-6.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-7.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Foundational Level",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-9-12F.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Advanced Level",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/2022CSMC_Grade-9-12A.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Model Curriculum for Computer Science (adopted 2018)-Full Document",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/K-12-Computer-ScienceMC.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Kindergarten.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr3.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr4.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr6.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr7.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Foundational and Advanced Levels",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Computer-Science/Model-Curricula-in-Computer-Science/ComputerScienceMC_Gr9-12.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Appendix A: Guidance and Supplemental Materials for Handwriting",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/ELAMC_AppendixA_HW.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-K-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-6-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-1-Revised-ELAMC-Feb2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-7-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-2-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-8-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-3-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 9-10",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-9-10-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-4-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 11-12",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-11-12-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Grade-5-Revised-ELAMC-2020.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Curriculum map introduction and description",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Curriculum-map-intro-and-descr.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Curriculum Map",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Word-Curriculum-Map.docx.aspx"
+  },
+  {
+    "label": "Unit Organizer",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio%E2%80%99s-Learning-Standards-for-English-Language-Art/Model-Curriculum-for-English-Language-Arts/Word_Unit_Organizer.docx.aspx"
+  },
+  {
+    "label": "English Language Arts Resource Evaluation Tool",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/ELA-Resource-Filter.pdf.aspx"
+  },
+  {
+    "label": "Interdisciplinary thematic exemplar texts",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Interdisciplinary-thematic-exemplar-texts.pdf.aspx"
+  },
+  {
+    "label": "Quality Review Rubric",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/English-Language-Art/Model-Curriculum-for-English-Language-Arts/Ohio-s-Quality-Review-Rubric-ELA.pdf.aspx"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-K_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Alg-1-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Alg-1_Math_Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-1_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Math-1-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Math-1-_Math_Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-2_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Geometry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Geom-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Geometry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Geo_Math_Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-3_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Math-2_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Math 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Math-2-_Math_Model-Curriculum_Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-4_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra 2/Math 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_Alg-2-_Math_3_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-5_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Number and Quantity",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_CC_NQ-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Statistics and Probability",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_Course_A2E_SP_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-6_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-6_Math_Instructional_Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Algebra",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_CC_Alg-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-7_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-7_Math_Instructional_Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Functions",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_CC_Functions-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-8_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Grade-8_Math_Instructional_Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Geometry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_CC_Geom-_Math_Model-Curriculum.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Statistics and Probability",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/HS_CC_Stats-and-Prob-_Math_Model-Curriculum-11-19-18.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Van Hiele Models of Geometric Thinking",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Van-Hiele-Model-of-Geometric-Thinking.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Overview",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Mathematics-Model-Curriculum-Overview.pdf.aspx"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_4_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "High School - Number and Quantity",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/High_School_Number-and-Quantity_Model-Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Kindergarten_Math_Model_Curriculum_March2015.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_5_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "High School - Algebra",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/High_School_Algebra_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_1_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_6_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "High School - Functions",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/High_School_Functions_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_2_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_7_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "High School - Geometry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/High_School_Geometry_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_3_Math_Model_Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Grade_8_Math_Model-Curriculum.pdf.aspx"
+  },
+  {
+    "label": "High School - Statistics and Probability",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/High_School_Statistics-and-Probability_Model-Curriculum.pdf.aspx"
+  },
+  {
+    "label": "Mathematics Resource Filter",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Mathematics-Resource-Filter-5-27-15.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Directions for Revising District Curriculum",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/Revision-to-District-Curriculum-Directions.pdf.aspx"
+  },
+  {
+    "label": "Curriculum Map",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/CurriculumMap.docx.aspx"
+  },
+  {
+    "label": "Curriculum Organizer",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Mathematics/Model-Curricula-in-Mathematics/WordUnitOrganizer.docx.aspx"
+  },
+  {
+    "label": "Quality Review Rubric",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Ohio-s-Learning-Standards-in-Mathematics/Model-Curricula-in-Mathematics/Mathematics-Quality-Review-Rubric.pdf.aspx"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio’s Learning Standards for Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/SciFinalStandardsMC060719.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio’s Learning Standards for Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/SciFinalStandardsMC060719.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Nature of Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/The-Nature-of-Science.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Final-Kindergarten-Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Final-Physical-Science-Instructional-Supports.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade K",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Kindergarten.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-1.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-2.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-3.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-4.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-5.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-6.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-7.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Grade-8.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physical-Science.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Biology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Biology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Chemistry",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Chemistry.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Environmental Science",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Environmental-Science.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physics",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physics.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Physical Geology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Physical-Geology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "Human Anatomy and Physiology",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-Human-Anatomy-and-Physiology.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "K-12",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Science/Ohios-Learning-Standards-and-MC/Science-Transition-Tools/Curriculum-Analysis-K-12.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Each Child, Our Future",
+    "href": "http://education.ohio.gov/getattachment/About/EachChildOurFuture/Final-Strategic-Plan-Board-Approved.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Ohio's Model Curriculum for Social Studies K-12 (Adopted June 2019)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/OhiosModelCurriculumSocialStudies.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Kindergarten.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Kindergarten.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "American History",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_AmericanHistory.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_AmericanHistory.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 1",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-1.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "American Government",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_AmericanGovernment.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_AmericanGovernment.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 2",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-2.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Modern World History",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_ModernWorldHistory.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_ModernWorldHistory.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 3",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-3.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-3.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "World Geography",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_WorldGeography.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_WorldGeography.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 4",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-4.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-4.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Economics and Financial Literacy",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_EconomicsandFinLit.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_EconomicsandFinLit.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 5",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-5.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Contemporary World Issues",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_ContempWorldIssues.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_ContempWorldIssues.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 6",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-6.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-6.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 7",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-7.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-7.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grade 8",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-8.docx.aspx?lang=en-US"
+  },
+  {
+    "label": "PDF",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/SSMC_Grade-8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Vertical Alignment Chart (K-8)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Social-Studies/Model-Curriculum-for-Social-Studies/Vertical-Alignment-Chart_K-8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Full Model Curriculum (K-12)",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Model-Curriculum-for-Technology/Tech-MC-K-12-Adopted-2022-2.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades K-2 Model Curriculum",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Model-Curriculum-for-Technology/Tech-MC-K-2-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 3-5 Model Curriculum",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Model-Curriculum-for-Technology/Tech-MC-3-5.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 6-8 Model Curriculum",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Model-Curriculum-for-Technology/Tech-MC-6-8.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Grades 9-12 Model Curriculum",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/Technology/Model-Curriculum-for-Technology/Tech-MC-9-12-1.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Kindergarten",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Kindergarten-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "First Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-1-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Second Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-2-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Third Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-3-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Fourth Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-4-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Fifth Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-5-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Sixth Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-6-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Seventh Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-7-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "Eighth Grade",
+    "href": "https://education.ohio.gov/getattachment/Topics/Learning-in-Ohio/OLS-Graphic-Sections/Learning-Standards/Grade-8-Standards.pdf.aspx?lang=en-US"
+  },
+  {
+    "label": "ADA services.",
+    "href": "https://education.ohio.gov/getattachment/Home/Disability-Inclusion-Access.pdf.aspx?lang=en-US"
+  }
+]

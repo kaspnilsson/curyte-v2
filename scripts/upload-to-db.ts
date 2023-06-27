@@ -8,7 +8,6 @@ import https from "https";
 import os from "os";
 import path from "path";
 import url from "url";
-import { getStandardsIndex } from "@/ai/pinecone";
 import { PineconeClient } from "@pinecone-database/pinecone";
 import { VectorOperationsApi } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch";
 import * as dotenv from "dotenv";
@@ -16,6 +15,8 @@ import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
+
+import { getStandardsIndex } from "../ai/pinecone";
 
 interface Row {
   label: string;
@@ -120,8 +121,9 @@ async function downloadAllFiles() {
   const tempDir = fs.mkdtempSync(os.tmpdir());
   const loadingStart = Date.now();
   // Download all files
-  const downloadPromises = Array.from(files).map((file) =>
-    downloadFile(file, tempDir).then((path) => loadFile(path, pineconeIndex))
+  const downloadPromises = Array.from(files).map(
+    (file) => downloadFile(file, tempDir)
+    // .then((path) => loadFile(path, pineconeIndex))
   );
 
   await Promise.all(downloadPromises);
@@ -133,12 +135,14 @@ async function downloadAllFiles() {
     "ms"
   );
 
-  // After you're done with the files, clean up the directory
-  fs.readdirSync(tempDir).forEach((file) => {
-    fs.unlinkSync(path.join(tempDir, file));
-  });
-  fs.rmdirSync(tempDir);
-  console.log("Temporary directory has been cleaned up");
+  console.log("Files available at ", tempDir);
+
+  // // After you're done with the files, clean up the directory
+  // fs.readdirSync(tempDir).forEach((file) => {
+  //   fs.unlinkSync(path.join(tempDir, file));
+  // });
+  // fs.rmdirSync(tempDir);
+  // console.log("Temporary directory has been cleaned up");
 }
 
 dotenv.config();
