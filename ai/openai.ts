@@ -1,7 +1,7 @@
 import { PromptTemplate } from "langchain/prompts";
 
 export const questionPrompt =
-  PromptTemplate.fromTemplate(`You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Achieve the following task by outputting an appropriate, standards-aligned lesson. Output must be in markdown.
+  PromptTemplate.fromTemplate(`You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Achieve the following task by outputting an appropriate, standards-aligned lesson, and ensure that the content is sufficiently explained for the audience. Output must be in markdown.
 
 {question}`);
 
@@ -14,4 +14,4 @@ export const refinePrompt =
   {context}
   ------------
   Given the new context, refine the original answer to better answer the question. 
-  If the context isn't useful, return the original answer in its original form. Output must be in markdown.`);
+  If the context isn't useful, return the original answer in its original form with no clarifications or additional notes. Output must be in markdown.`);

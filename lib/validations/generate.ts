@@ -12,23 +12,33 @@ export const generateSchema = z.object({
 
 export type LessonPlanGenerationSchema = z.infer<typeof generateSchema>;
 
-export const generateLessonPlanStr = (
-  input: LessonPlanGenerationSchema
-): string => {
-  let str = `Generate a lesson plan for a ${
-    input.gradeLevel ? `Grade ${input.gradeLevel} ` : ""
-  }${input.subject} class.`;
+export const generateLessonPlanStr = ({
+  topic,
+  subject,
+  stateLocale,
+  gradeLevel,
+  lessonStandard,
+  keywords,
+  hasQuiz,
+}: LessonPlanGenerationSchema): string => {
+  let str = `Generate a lesson plan about ${topic} for a ${
+    gradeLevel ? `${gradeLevel} ` : ""
+  }${subject} class.`;
 
-  if (input.lessonStandard) {
-    str += ` The lesson must focus on the standard ${input.lessonStandard}, which requires students to ${input.topic}.`;
+  if (lessonStandard) {
+    str += ` The lesson must focus on the standard ${lessonStandard}.`;
   }
 
-  if (input.keywords) {
-    str += ` The lesson should also attempt to cover the following subjects: ${input.keywords}.`;
+  if (stateLocale) {
+    str += ` The lesson should prioritize content from ${stateLocale} if it exists.`;
   }
 
-  if (input.hasQuiz !== undefined) {
-    str += ` The lesson ${input.hasQuiz ? "must" : "must not"} include a quiz.`;
+  if (keywords) {
+    str += ` The teacher provided these additional keywords as context: ${keywords}.`;
+  }
+
+  if (hasQuiz !== undefined) {
+    str += ` The lesson ${hasQuiz ? "must" : "must not"} include a quiz.`;
   }
 
   return str;
