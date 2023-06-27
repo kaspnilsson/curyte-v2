@@ -8,6 +8,7 @@ import https from "https";
 import os from "os";
 import path from "path";
 import url from "url";
+import { promisify } from "util";
 import { PineconeClient } from "@pinecone-database/pinecone";
 import { VectorOperationsApi } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch";
 import * as dotenv from "dotenv";
@@ -25,7 +26,13 @@ interface Row {
 
 const splitter = new RecursiveCharacterTextSplitter();
 
-async function downloadFile(fileUrl: string, outputDir: string) {
+const setTimeoutPromise = promisify(setTimeout);
+
+async function downloadFile(
+  fileUrl: string,
+  outputDir: string,
+  timeoutDurationMs = 600_000
+) {
   return new Promise<string>((resolve, reject) => {
     const now = Date.now();
     // Parse the filename from the URL
@@ -51,7 +58,7 @@ async function downloadFile(fileUrl: string, outputDir: string) {
       fileStream.on("finish", () => {
         console.log(
           "Finished downloading",
-          filename,
+          outputPath,
           "in",
           Date.now() - now,
           "ms"
@@ -60,6 +67,15 @@ async function downloadFile(fileUrl: string, outputDir: string) {
       });
       fileStream.on("error", reject);
     }).on("error", reject); // Catch network errors
+
+    // Timeout
+    setTimeoutPromise(timeoutDurationMs).then(() => {
+      reject(
+        new Error(
+          `Download of ${outputPath} timed out after ${timeoutDurationMs} ms`
+        )
+      );
+    });
   });
 }
 
