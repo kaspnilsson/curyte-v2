@@ -35,7 +35,7 @@ export default function SignUpPage() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-stone-500 dark:bg-stone-950  dark:text-stone-400">
+              <span className="bg-white px-2 text-slate-500 dark:bg-slate-950  dark:text-slate-400">
                 Or continue with
               </span>
             </div>
@@ -43,7 +43,7 @@ export default function SignUpPage() {
           {/* <SignUpForm /> */}
         </CardContent>
         <CardFooter className="grid gap-4">
-          <div className="text-sm text-stone-500  dark:text-stone-400">
+          <div className="text-sm text-slate-500  dark:text-slate-400">
             Already have an account?{" "}
             <Link
               aria-label="Sign in"

@@ -12,7 +12,7 @@ export default function IndexPage() {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
           🧠 Generate lessons with the power of AI
         </h1>
-        <p className="max-w-[700px] text-lg text-stone-500 dark:text-stone-400">
+        <p className="max-w-[700px] text-lg text-slate-500 dark:text-slate-400">
           Create engaging plans in minutes, so you can focus on the kids.
         </p>
       </div>

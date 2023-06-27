@@ -35,7 +35,7 @@ export default function SignInPage() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-stone-500 dark:bg-stone-950 dark:text-stone-400">
+              <span className="bg-white px-2 text-slate-500 dark:bg-slate-950 dark:text-slate-400">
                 Or continue with
               </span>
             </div>
@@ -43,7 +43,7 @@ export default function SignInPage() {
           <SignInForm />
         </CardContent>
         <CardFooter className="flex flex-wrap items-center space-x-2">
-          <div className="flex-1 text-sm text-stone-500 dark:text-stone-400">
+          <div className="flex-1 text-sm text-slate-500 dark:text-slate-400">
             Don&apos;t have an account?{" "}
             <Link
               aria-label="Sign up"
