@@ -15,7 +15,7 @@ export const siteConfig = {
     },
     {
       title: "Query playground",
-      href: "/lessons/playground",
+      href: "/playground",
     },
   ],
 };

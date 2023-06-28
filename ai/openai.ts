@@ -32,7 +32,7 @@ Standards & objectives:
 `);
 
 export const assessmentPrompt = PromptTemplate.fromTemplate(`
-You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Generate one assessment for this plan with five questions that can be used to measure student progress throughout the lesson, providing opportunities for real-time feedback and adjustments. Provide a sample answer key for the assessment. Return the entire lesson plan in markdown.
+You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Generate one assessment for this plan with three questions that can be used to measure student progress throughout the lesson, providing opportunities for real-time feedback and adjustments. Provide a sample answer key for the assessment.
 ----
 Lesson plan idea: {question}
 ----
@@ -87,7 +87,7 @@ Ensure the content is sufficiently explained for the audience. Output must be a 
 `);
 
 export const formatPrompt = PromptTemplate.fromTemplate(`
-Reformat the following content using markdown.
+Reformat the following content using markdown. Output must be a completed lesson plan.
 ----
 {plan}
 `);
