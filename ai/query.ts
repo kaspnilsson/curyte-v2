@@ -111,7 +111,7 @@ export async function queryComplex(
     retriever: vectorStore.asRetriever(),
   });
   const identifyRes = await chain.call({ query, verbose: true });
-  console.log(identifyRes);
+  // console.log(identifyRes);
   console.timeEnd("Identify / define call");
   const standards = identifyRes.text;
 
@@ -126,7 +126,7 @@ export async function queryComplex(
     standards,
     question: query,
   });
-  console.log(designRes);
+  // console.log(designRes);
   console.timeEnd("Design call");
   const plan = designRes.text;
 
@@ -147,7 +147,7 @@ export async function queryComplex(
         plan,
         question: query,
       });
-      console.log(res);
+      // console.log(res);
       console.timeEnd("Assessment call");
       return res;
     })(),
@@ -167,7 +167,7 @@ export async function queryComplex(
         plan,
         question: query,
       });
-      console.log(res);
+      // console.log(res);
       console.timeEnd("Differentiate call");
       return res;
     })(),
@@ -190,7 +190,7 @@ export async function queryComplex(
     standards,
     question: query,
   });
-  console.log(reflectRes);
+  // console.log(reflectRes);
   console.timeEnd("Reflect call");
 
   console.time("Formatting call");
@@ -203,7 +203,7 @@ export async function queryComplex(
     verbose: true,
     plan: reflectRes.text,
   });
-  console.log(formatRes);
+  // console.log(formatRes);
   console.timeEnd("Formatting call");
 
   console.timeEnd("Total runtime");

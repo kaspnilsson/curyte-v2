@@ -7,7 +7,6 @@ import {
   generateLessonPlanStr,
   generateSchema,
 } from "@/lib/validations/generate";
-import { playgroundSchema } from "@/lib/validations/playground";
 
 export const runtime: ServerRuntime = "edge";
 
@@ -20,7 +19,6 @@ export async function POST(request: Request) {
   try {
     rawParams = await request.json();
     const params = generateSchema.parse(rawParams);
-    console.log("[INFO] Input parameters validated successfully");
 
     query = generateLessonPlanStr(params);
   } catch (error) {
