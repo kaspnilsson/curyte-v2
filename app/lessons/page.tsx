@@ -1,6 +1,3 @@
-// TODO: not this
-"use client";
-
 import Link from "next/link";
 
 import { supabase } from "@/lib/supabase";
@@ -21,6 +18,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Icons } from "@/components/icons";
+
+// TODO: not this?
+export const revalidate = 0;
 
 async function getData() {
   return supabase
