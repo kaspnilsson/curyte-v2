@@ -19,11 +19,6 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 interface RootLayoutProps {
@@ -35,7 +30,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <ClerkProvider>
         <html lang="en" suppressHydrationWarning>
-          <head />
+          <head>
+            <link
+              rel="icon"
+              href="/logo_dark.svg"
+              media="(prefers-color-scheme:no-preference)"
+            />
+            <link
+              rel="icon"
+              href="/logo_light.svg"
+              media="(prefers-color-scheme:dark)"
+            />
+            <link
+              rel="icon"
+              href="/logo_dark.svg"
+              media="(prefers-color-scheme:light)"
+            />
+          </head>
           <body
             className={cn(
               "min-h-screen bg-background font-sans antialiased ",
