@@ -1,31 +1,22 @@
-// TODO dont do this
-"use client";
-
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
 
-import { siteConfig } from "@/config/site";
 import { supabase } from "@/lib/supabase";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Form } from "@/components/ui/form";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { GenerateForm } from "@/components/forms/generate-form";
 import { Icons } from "@/components/icons";
 
 async function getData() {

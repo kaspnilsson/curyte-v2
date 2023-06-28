@@ -139,60 +139,62 @@ export function GenerateForm() {
             className="grid gap-4"
             onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
           >
-            <FormField
-              control={form.control}
-              name="subject"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Subject</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Science" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {SUBJECTS.map((subject, index) => (
-                        <SelectItem key={index} value={subject}>
-                          {subject}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="gradeLevel"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Grade level</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="9th grade" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {GRADE_LEVELS.map((gradeLevel, index) => (
-                        <SelectItem key={index} value={gradeLevel}>
-                          {gradeLevel}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Subject</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Science" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {SUBJECTS.map((subject, index) => (
+                          <SelectItem key={index} value={subject}>
+                            {subject}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="gradeLevel"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Grade level</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="9th grade" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {GRADE_LEVELS.map((gradeLevel, index) => (
+                          <SelectItem key={index} value={gradeLevel}>
+                            {gradeLevel}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="topic"
