@@ -90,7 +90,7 @@ export default function Page() {
           <>
             <div>
               <Progress value={progress * 100} />
-              <p className="mx-auto mt-1 w-fit text-sm text-muted-foreground">
+              <p className="mx-auto mt-1 w-fit text-sm italic text-muted-foreground">
                 {generationUpdate}
               </p>
             </div>
