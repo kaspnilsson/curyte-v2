@@ -114,6 +114,8 @@ export async function queryComplex(
   console.log(identifyRes);
   console.timeEnd("Identify / define call");
   const standards = identifyRes.text;
+  // todo remove
+  return standards;
 
   console.time("Design call");
   progressCallback("Designing lesson plan...", 0.2);

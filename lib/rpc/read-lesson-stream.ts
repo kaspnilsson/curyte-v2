@@ -13,29 +13,24 @@ export async function promisifyLessonIdStream(
 
   try {
     while (true) {
-      if (finalResult) return finalResult;
-      const { done, value } = await reader.read();
-
-      if (done) {
-        // Process any remaining data in the buffer
-        const processed = processBuffer(buffer, onProgressUpdate);
-        finalResult = processed.finalResult;
-        break;
-      }
+      const { value, done } = await reader.read();
 
       // Append the chunk to the buffer
       buffer += decoder.decode(value, { stream: true });
       console.log("buffer so far", buffer);
+
       // Process the buffer
       const processed = processBuffer(buffer, onProgressUpdate);
       buffer = processed.remainingBuffer;
       finalResult = processed.finalResult || finalResult;
+      if (finalResult) return finalResult;
+      if (done) {
+        throw new Error("Stream is closed, but no result!");
+      }
     }
   } catch (e) {
     throw new Error("An error occurred while reading the stream: " + e);
   }
-
-  return finalResult;
 }
 
 function processBuffer(

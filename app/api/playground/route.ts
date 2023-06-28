@@ -43,9 +43,6 @@ export async function POST(request: Request) {
               })
             )
           );
-          controller.enqueue(
-            encoder.encode(JSON.stringify({ status: "in-progress" }))
-          );
         });
         console.timeEnd("Query execution time");
 
@@ -67,9 +64,6 @@ export async function POST(request: Request) {
               })
             )
           );
-          controller.enqueue(
-            encoder.encode(JSON.stringify({ status: "in-progress" }))
-          );
           controller.close();
           return;
         }
@@ -83,9 +77,6 @@ export async function POST(request: Request) {
                 message: "Error generating lesson plan",
               })
             )
-          );
-          controller.enqueue(
-            encoder.encode(JSON.stringify({ status: "in-progress" }))
           );
           controller.close();
           return;
