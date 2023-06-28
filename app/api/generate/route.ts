@@ -38,6 +38,7 @@ export async function POST(request: Request) {
         // Fetch the data
         console.time("Query execution time");
         const content = await queryComplex(query, (message, progress) => {
+          console.log("Got progress update:", message, progress);
           controller.enqueue(
             encoder.encode(
               JSON.stringify({
