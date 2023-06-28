@@ -15,6 +15,8 @@ import {
 import { Form } from "@/components/ui/form";
 import { GenerateForm } from "@/components/forms/generate-form";
 
+export const runtime = "edge";
+
 async function getData(id: string) {
   return supabase.from("generated").select().eq("id", id);
 }

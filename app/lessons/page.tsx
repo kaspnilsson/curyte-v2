@@ -23,6 +23,8 @@ import { Icons } from "@/components/icons";
 // TODO: not this?
 export const revalidate = 0;
 
+export const runtime = "edge";
+
 async function getData() {
   return supabase
     .from("generated")
