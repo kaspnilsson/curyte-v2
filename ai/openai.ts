@@ -68,7 +68,8 @@ A completed lesson plan has at least these five sections, but may have more if n
 
 Using the below context, assemble and return the completed lesson plan. 
 ----
-Lesson plan idea: {question}
+Lesson plan idea:
+{question}
 ----
 Standards & objectives:
 {standards}

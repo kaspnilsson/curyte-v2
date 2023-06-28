@@ -9,6 +9,7 @@ export const runtime: ServerRuntime = "edge";
 
 export async function POST(request: Request) {
   console.time("POST request processing time");
+  console.log("Got request:", JSON.stringify(request));
 
   // Validate the parameters
   let rawParams;
