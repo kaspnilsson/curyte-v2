@@ -14,7 +14,6 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.21.10",
     "@hookform/resolvers": "^3.1.1",
     "@pinecone-database/pinecone": "^0.1.6",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -72,6 +71,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.1.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^17.0.45",

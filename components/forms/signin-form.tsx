@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { isClerkAPIResponseError, useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -26,7 +25,7 @@ type Inputs = z.infer<typeof authSchema>;
 
 export function SignInForm() {
   const router = useRouter();
-  const { isLoaded, signIn, setActive } = useSignIn();
+  // const { isLoaded, signIn, setActive } = useSignIn();
   const [isPending, startTransition] = React.useTransition();
   const { toast } = useToast();
 
@@ -40,46 +39,41 @@ export function SignInForm() {
   });
 
   function onSubmit(data: Inputs) {
-    if (!isLoaded) return;
-
-    startTransition(async () => {
-      try {
-        const result = await signIn.create({
-          identifier: data.email,
-          password: data.password,
-        });
-
-        if (result.status === "complete") {
-          await setActive({ session: result.createdSessionId });
-
-          router.push(`${window.location.origin}/`);
-        } else {
-          /*Investigate why the login hasn't completed */
-          console.log(result);
-        }
-      } catch (error) {
-        const unknownError = "Something went wrong, please try again.";
-
-        const description = isClerkAPIResponseError(error)
-          ? error.errors[0]?.longMessage ?? unknownError
-          : unknownError;
-
-        toast({
-          title: "Error",
-          description,
-        });
-      }
-    });
+    // if (!isLoaded) return;
+    // startTransition(async () => {
+    //   try {
+    //     const result = await signIn.create({
+    //       identifier: data.email,
+    //       password: data.password,
+    //     });
+    //     if (result.status === "complete") {
+    //       await setActive({ session: result.createdSessionId });
+    //       router.push(`${window.location.origin}/`);
+    //     } else {
+    //       /*Investigate why the login hasn't completed */
+    //       console.log(result);
+    //     }
+    //   } catch (error) {
+    //     const unknownError = "Something went wrong, please try again.";
+    //     const description = isClerkAPIResponseError(error)
+    //       ? error.errors[0]?.longMessage ?? unknownError
+    //       : unknownError;
+    //     toast({
+    //       title: "Error",
+    //       description,
+    //     });
+    //   }
+    // });
   }
 
   return (
     <Form {...form}>
       <form
         className="grid gap-4"
-        onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
+        // onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
         <FormField
-          control={form.control}
+          // control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
@@ -92,7 +86,7 @@ export function SignInForm() {
           )}
         />
         <FormField
-          control={form.control}
+          // control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem>

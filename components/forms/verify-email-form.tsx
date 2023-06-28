@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { isClerkAPIResponseError, useSignUp } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -25,7 +24,7 @@ type Inputs = z.infer<typeof verfifyEmailSchema>;
 
 export function VerifyEmailForm() {
   const router = useRouter();
-  const { isLoaded, signUp, setActive } = useSignUp();
+  // const { isLoaded, signUp, setActive } = useSignUp();
   const [isPending, startTransition] = React.useTransition();
   const { toast } = useToast();
 
@@ -38,36 +37,32 @@ export function VerifyEmailForm() {
   });
 
   function onSubmit(data: Inputs) {
-    if (!isLoaded) return;
-
-    startTransition(async () => {
-      try {
-        const completeSignUp = await signUp.attemptEmailAddressVerification({
-          code: data.code,
-        });
-        if (completeSignUp.status !== "complete") {
-          /*  investigate the response, to see if there was an error
-             or if the user needs to complete more steps.*/
-          console.log(JSON.stringify(completeSignUp, null, 2));
-        }
-        if (completeSignUp.status === "complete") {
-          await setActive({ session: completeSignUp.createdSessionId });
-
-          router.push(`${window.location.origin}/`);
-        }
-      } catch (error) {
-        const unknownError = "Something went wrong, please try again.";
-
-        const description = isClerkAPIResponseError(error)
-          ? error.errors[0]?.longMessage ?? unknownError
-          : unknownError;
-
-        toast({
-          title: "Error",
-          description,
-        });
-      }
-    });
+    // if (!isLoaded) return;
+    // startTransition(async () => {
+    //   try {
+    //     const completeSignUp = await signUp.attemptEmailAddressVerification({
+    //       code: data.code,
+    //     });
+    //     if (completeSignUp.status !== "complete") {
+    //       /*  investigate the response, to see if there was an error
+    //          or if the user needs to complete more steps.*/
+    //       console.log(JSON.stringify(completeSignUp, null, 2));
+    //     }
+    //     if (completeSignUp.status === "complete") {
+    //       await setActive({ session: completeSignUp.createdSessionId });
+    //       router.push(`${window.location.origin}/`);
+    //     }
+    //   } catch (error) {
+    //     const unknownError = "Something went wrong, please try again.";
+    //     const description = isClerkAPIResponseError(error)
+    //       ? error.errors[0]?.longMessage ?? unknownError
+    //       : unknownError;
+    //     toast({
+    //       title: "Error",
+    //       description,
+    //     });
+    //   }
+    // });
   }
 
   return (

@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { SignOutButton } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
@@ -18,13 +17,7 @@ export function LogOutButtons() {
   return (
     <div className="flex w-full items-center space-x-2">
       {mounted ? (
-        <SignOutButton
-          signOutCallback={() =>
-            startTransition(() => {
-              router.push(`${window.location.origin}/?redirect=false`);
-            })
-          }
-        >
+        
           <Button
             aria-label="Log out"
             size="sm"
@@ -36,7 +29,6 @@ export function LogOutButtons() {
             )}
             Log out
           </Button>
-        </SignOutButton>
       ) : (
         <Skeleton
           className={cn(
