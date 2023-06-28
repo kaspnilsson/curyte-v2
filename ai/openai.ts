@@ -14,7 +14,7 @@ export const refinePrompt =
   {context}
   ----
   Given the new context, refine the original answer to better answer the question. 
-  If the context isn't useful, return the original answer in its original form with no clarifications or additional notes. Output must be in markdown.`);
+  If the context isn't useful, return the original answer in its original form with no clarifications or additional notes.`);
 
 export const identifyAndDefinePrompt = PromptTemplate.fromTemplate(
   `You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Given the following lesson plan idea, identify the most relevant academic standards that your lesson should address, and clearly define your lesson's objectives and goals aligned with these standards. If no standards are highly relevant, do not reference them, but do continue with the task.
@@ -83,5 +83,11 @@ Assessment:
 Differentiation:
 {differentiation}
 ----
-Ensure the content is sufficiently explained for the audience. Output must be a completed lesson plan, and must be in markdown!
+Ensure the content is sufficiently explained for the audience. Output must be a completed lesson plan.
+`);
+
+export const formatPrompt = PromptTemplate.fromTemplate(`
+Reformat the following content using markdown.
+----
+{plan}
 `);

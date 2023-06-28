@@ -14,6 +14,7 @@ import {
   assessmentPrompt,
   designPrompt,
   differentiatePrompt,
+  formatPrompt,
   identifyAndDefinePrompt,
   questionPrompt,
   refinePrompt,
@@ -129,38 +130,50 @@ export async function queryComplex(
   console.timeEnd("Design call");
   const plan = designRes.text;
 
-  console.time("Assessment call");
-  progressCallback("Developing formative assessments...", 0.4);
-  const assessmentChain = new LLMChain({
-    llm: chatOpenAi,
-    prompt: assessmentPrompt,
-  });
-  const assessmentRes = await assessmentChain.call({
-    verbose: true,
-    standards,
-    plan,
-    question: query,
-  });
-  console.log(assessmentRes);
-  console.timeEnd("Assessment call");
-  const assessment = assessmentRes.text;
+  let progressSoFar = 0.2;
 
-  console.time("Differentiate call");
-  progressCallback(
-    "Incorporating differentiated instruction techniques...",
-    0.6
-  );
-  const differentiateChain = new LLMChain({
-    llm: chatOpenAi,
-    prompt: differentiatePrompt,
-  });
-  const differentiateRes = await differentiateChain.call({
-    verbose: true,
-    plan,
-    question: query,
-  });
-  console.log(differentiateRes);
-  console.timeEnd("Differentiate call");
+  const [assessmentRes, differentiateRes] = await Promise.all([
+    (async () => {
+      console.time("Assessment call");
+      progressSoFar += 0.2;
+      progressCallback("Developing formative assessments...", progressSoFar);
+      const assessmentChain = new LLMChain({
+        llm: chatOpenAi,
+        prompt: assessmentPrompt,
+      });
+      const res = await assessmentChain.call({
+        verbose: true,
+        standards,
+        plan,
+        question: query,
+      });
+      console.log(res);
+      console.timeEnd("Assessment call");
+      return res;
+    })(),
+    (async () => {
+      console.time("Differentiate call");
+      progressSoFar += 0.2;
+      progressCallback(
+        "Incorporating differentiated instruction techniques...",
+        progressSoFar
+      );
+      const differentiateChain = new LLMChain({
+        llm: chatOpenAi,
+        prompt: differentiatePrompt,
+      });
+      const res = await differentiateChain.call({
+        verbose: true,
+        plan,
+        question: query,
+      });
+      console.log(res);
+      console.timeEnd("Differentiate call");
+      return res;
+    })(),
+  ]);
+
+  const assessment = assessmentRes.text;
   const differentiation = differentiateRes.text;
 
   console.time("Reflect call");
@@ -180,6 +193,19 @@ export async function queryComplex(
   console.log(reflectRes);
   console.timeEnd("Reflect call");
 
+  console.time("Formatting call");
+  progressCallback("Formatting lesson plan...", 0.9);
+  const formatChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: formatPrompt,
+  });
+  const formatRes = await formatChain.call({
+    verbose: true,
+    plan: reflectRes.text,
+  });
+  console.log(formatRes);
+  console.timeEnd("Formatting call");
+
   console.timeEnd("Total runtime");
-  return reflectRes.text;
+  return formatRes.text;
 }
