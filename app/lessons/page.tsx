@@ -23,7 +23,10 @@ import {
 import { Icons } from "@/components/icons";
 
 async function getData() {
-  return supabase.from("generated").select();
+  return supabase
+    .from("generated")
+    .select()
+    .order("created_at", { ascending: false });
 }
 
 export default async function Page() {
@@ -38,9 +41,10 @@ export default async function Page() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Subject</TableHead>
+              {/* <TableHead>Subject</TableHead>
               <TableHead>Grade level</TableHead>
-              <TableHead>Topic</TableHead>
+              <TableHead>Topic</TableHead> */}
+              <TableHead>Query</TableHead>
               <TableHead>Created</TableHead>
               <TableHead></TableHead>
             </TableRow>
@@ -48,13 +52,14 @@ export default async function Page() {
           <TableBody>
             {(data || []).map((lesson, index) => (
               <TableRow key={index}>
-                <TableCell className="font-medium">
+                {/* <TableCell className="font-medium">
                   {lesson.params.subject || "No subject"}
                 </TableCell>
                 <TableCell>
                   {lesson.params.gradeLevel || "No grade level"}
                 </TableCell>
-                <TableCell>{lesson.params.topic || "No topic"}</TableCell>
+                <TableCell>{lesson.params.topic || "No topic"}</TableCell> */}
+                <TableCell>{lesson.query}</TableCell>
                 <TableCell suppressHydrationWarning>
                   {new Date(lesson.created_at).toLocaleString()}
                 </TableCell>
