@@ -3,9 +3,9 @@
 import * as React from "react";
 import { isClerkAPIResponseError, useSignIn } from "@clerk/nextjs";
 import type { OAuthStrategy } from "@clerk/types";
-import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 import { Icons } from "@/components/icons";
 
 const oauthProviders = [
@@ -21,6 +21,7 @@ const oauthProviders = [
 export function OAuthSignIn() {
   const [isLoading, setIsLoading] = React.useState<OAuthStrategy | null>(null);
   const { signIn, isLoaded: signInLoaded } = useSignIn();
+  const { toast } = useToast();
 
   async function oauthSignIn(provider: OAuthStrategy) {
     if (!signInLoaded) return null;
@@ -36,9 +37,14 @@ export function OAuthSignIn() {
 
       const unknownError = "Something went wrong, please try again.";
 
-      isClerkAPIResponseError(error)
-        ? toast.error(error.errors[0]?.longMessage ?? unknownError)
-        : toast.error(unknownError);
+      const description = isClerkAPIResponseError(error)
+        ? error.errors[0]?.longMessage ?? unknownError
+        : unknownError;
+
+      toast({
+        title: "Error",
+        description,
+      });
     }
   }
 

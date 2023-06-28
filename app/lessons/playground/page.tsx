@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 
 import { siteConfig } from "@/config/site";
 import { promisifyLessonIdStream } from "@/lib/rpc/read-lesson-stream";
@@ -32,6 +31,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { GenerateForm } from "@/components/forms/generate-form";
 import LessonSkeleton from "@/components/skeletons/lesson-skeleton";
 
@@ -41,6 +41,7 @@ export default function Page() {
   });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { toast } = useToast();
 
   async function onSubmit({ query }: PlaygroundGenerationSchema) {
     try {
@@ -52,8 +53,10 @@ export default function Page() {
       const lessonId = await promisifyLessonIdStream(response);
       router.push("/lessons/" + lessonId);
     } catch (e) {
-      toast.error("Something went wrong, please try again: " + e);
-    } finally {
+      toast({
+        title: "Error",
+        description: "Something went wrong, please try again: " + e,
+      });
       setLoading(false);
     }
   }

@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { isClerkAPIResponseError, useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import type { z } from "zod";
 
 import { authSchema } from "@/lib/validations/auth";
@@ -19,6 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 import { Icons } from "@/components/icons";
 import { PasswordInput } from "@/components/password-input";
 
@@ -28,6 +28,7 @@ export function SignInForm() {
   const router = useRouter();
   const { isLoaded, signIn, setActive } = useSignIn();
   const [isPending, startTransition] = React.useTransition();
+  const { toast } = useToast();
 
   // react-hook-form
   const form = useForm<Inputs>({
@@ -59,9 +60,14 @@ export function SignInForm() {
       } catch (error) {
         const unknownError = "Something went wrong, please try again.";
 
-        isClerkAPIResponseError(error)
-          ? toast.error(error.errors[0]?.longMessage ?? unknownError)
-          : toast.error(unknownError);
+        const description = isClerkAPIResponseError(error)
+          ? error.errors[0]?.longMessage ?? unknownError
+          : unknownError;
+
+        toast({
+          title: "Error",
+          description,
+        });
       }
     });
   }

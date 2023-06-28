@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Key, Link } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { toast } from "sonner";
 import type { z } from "zod";
 
 import { promisifyLessonIdStream } from "@/lib/rpc/read-lesson-stream";
@@ -16,6 +15,14 @@ import {
   generateSchema,
 } from "@/lib/validations/generate";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -33,20 +40,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useToast } from "@/components/ui/use-toast";
 
 import { OAuthSignIn } from "../auth/oauth-signin";
 import { Icons } from "../icons";
 import { PasswordInput } from "../password-input";
 import LessonSkeleton from "../skeletons/lesson-skeleton";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import { Skeleton } from "../ui/skeleton";
 import { SignInForm } from "./signin-form";
 
 const SUBJECTS = [
@@ -91,7 +91,7 @@ export function GenerateForm() {
   });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const mounted = useRef(true);
+  const { toast } = useToast();
 
   async function onSubmit(data: LessonPlanGenerationSchema) {
     try {
@@ -105,7 +105,10 @@ export function GenerateForm() {
       const lessonId = await promisifyLessonIdStream(response);
       router.push("/lessons/" + lessonId);
     } catch (e) {
-      toast.error("Something went wrong, please try again: " + e);
+      toast({
+        title: "Error",
+        description: "Something went wrong, please try again: " + e,
+      });
       console.error(e);
       setLoading(false);
     }
