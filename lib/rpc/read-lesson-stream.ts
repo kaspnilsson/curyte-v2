@@ -34,6 +34,7 @@ export async function promisifyLessonIdStream(
 
       // Append the chunk to the result string
       result += decoder.decode(value, { stream: true });
+      console.log("result so far", result);
 
       // Check for progress updates
       if (result.includes('{"status":"in-progress"')) {
@@ -42,6 +43,7 @@ export async function promisifyLessonIdStream(
         result = result.slice(endIndex);
 
         try {
+          console.log("trying to parse progress object", progressJson);
           const progressObj = JSON.parse(progressJson);
           onProgressUpdate(progressObj.message, progressObj.progress);
         } catch (e) {
