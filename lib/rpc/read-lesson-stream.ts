@@ -51,25 +51,18 @@ function processBuffer(
     try {
       console.log("Trying to parse JSON object:", jsonObject);
       const parsedObject = JSON.parse(jsonObject);
-      if (
-        parsedObject.status === "in-progress" &&
-        typeof parsedObject.message === "string" &&
-        typeof parsedObject.progress === "number"
-      ) {
-        console.log(
-          "Got progress update:",
-          parsedObject.message,
-          parsedObject.progress
-        );
-        // Call the onProgressUpdate callback
-        onProgressUpdate(parsedObject.message, parsedObject.progress);
-      } else {
-        console.log("Got final result:", parsedObject);
-        if (parsedObject.status === "error") {
-          throw new Error(
-            "Error during generation:" + JSON.stringify(parsedObject)
-          );
+      if (parsedObject.status === "in-progress") {
+        console.log("Got progress update:", parsedObject);
+        if (parsedObject.message && parsedObject.progress) {
+          // Call the onProgressUpdate callback
+          onProgressUpdate(parsedObject.message, parsedObject.progress);
         }
+      } else if (parsedObject.status === "error") {
+        throw new Error(
+          "Error during generation:" + JSON.stringify(parsedObject)
+        );
+      } else if (parsedObject.status === "success") {
+        console.log("Got final result:", parsedObject);
         if (!parsedObject.id) {
           throw new Error(
             "Final result does not contain an id:" +
