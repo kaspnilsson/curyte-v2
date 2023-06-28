@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { DeleteButton } from "@/components/delete-button";
 import { Icons } from "@/components/icons";
 
 // TODO: not this?
@@ -31,6 +32,7 @@ async function getData() {
 
 export default async function Page() {
   const { data, error } = await getData();
+
   return (
     <Card>
       <CardHeader className="space-y-1">
@@ -64,13 +66,19 @@ export default async function Page() {
                   {new Date(lesson.created_at).toLocaleString()}
                 </TableCell>
                 <TableCell>
-                  <Link
-                    href={`/lessons/${lesson.id}`}
-                    className={buttonVariants({ variant: "secondary" })}
-                  >
-                    View
-                    <Icons.link className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Link>
+                  <div className="flex items-center space-x-2">
+                    <DeleteButton
+                      lessonId={lesson.id}
+                      className={buttonVariants({ variant: "outline" })}
+                    />
+                    <Link
+                      href={`/lessons/${lesson.id}`}
+                      className={buttonVariants({ variant: "secondary" })}
+                    >
+                      View
+                      <Icons.link className="ml-2 h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

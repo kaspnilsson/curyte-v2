@@ -18,10 +18,11 @@ export async function POST(request: Request) {
   let rawParams;
   let query = "";
   try {
+    rawParams = await request.json();
     const params = generateSchema.parse(rawParams);
     console.log("[INFO] Input parameters validated successfully");
 
-    const query = generateLessonPlanStr(params);
+    query = generateLessonPlanStr(params);
   } catch (error) {
     console.error("Invalid parameters:", error);
     return new NextResponse(JSON.stringify({ error: "Invalid parameters" }), {
