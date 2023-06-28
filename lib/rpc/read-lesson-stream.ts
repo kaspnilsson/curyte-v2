@@ -1,5 +1,6 @@
 export async function promisifyLessonIdStream(
-  response: Response
+  response: Response,
+  onProgressUpdate: (progressMessage: string, progressValue: number) => void
 ): Promise<string | null> {
   if (!response.body) {
     throw new Error("No ReadableStream received");
@@ -25,7 +26,7 @@ export async function promisifyLessonIdStream(
             const parsedResult = JSON.parse(jsonPart);
             return parsedResult.id;
           } catch (e) {
-            throw e;
+            throw new Error("Failed to parse the final JSON result");
           }
         }
         return null;
@@ -33,8 +34,22 @@ export async function promisifyLessonIdStream(
 
       // Append the chunk to the result string
       result += decoder.decode(value, { stream: true });
+
+      // Check for progress updates
+      if (result.includes('{"status":"in-progress"')) {
+        const endIndex = result.indexOf("}") + 1;
+        const progressJson = result.slice(0, endIndex);
+        result = result.slice(endIndex);
+
+        try {
+          const progressObj = JSON.parse(progressJson);
+          onProgressUpdate(progressObj.message, progressObj.progress);
+        } catch (e) {
+          console.error("Failed parsing progress JSON", e);
+        }
+      }
     }
   } catch (e: unknown) {
-    throw new Error("An error occurred while reading the stream: " + e);
+    throw new Error("An error occurred while reading the stream");
   }
 }

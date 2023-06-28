@@ -1,18 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import { siteConfig } from "@/config/site";
 import { promisifyLessonIdStream } from "@/lib/rpc/read-lesson-stream";
 import {
   PlaygroundGenerationSchema,
   playgroundSchema,
 } from "@/lib/validations/playground";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -29,11 +27,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { GenerateForm } from "@/components/forms/generate-form";
 import LessonSkeleton from "@/components/skeletons/lesson-skeleton";
+
+const DEFAULT_CARD_DESCRIPTION =
+  "Tell Curyte what to generate using a completely custom prompt.";
 
 export default function Page() {
   const form = useForm<PlaygroundGenerationSchema>({
@@ -42,6 +42,8 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
+  const [generationUpdate, setGenerationUpdate] = useState("");
+  const [progress, setProgress] = useState(0);
 
   async function onSubmit({ query }: PlaygroundGenerationSchema) {
     try {
@@ -50,7 +52,21 @@ export default function Page() {
         method: "POST",
         body: JSON.stringify({ query }),
       });
-      const lessonId = await promisifyLessonIdStream(response);
+      const lessonId = await promisifyLessonIdStream(
+        response,
+        (update, progress) => {
+          setGenerationUpdate(update);
+          setProgress(progress);
+        }
+      );
+      if (!lessonId) {
+        toast({
+          title: "Error",
+          description: "Something went wrong, please try again.",
+        });
+        setLoading(false);
+        return;
+      }
       router.push("/lessons/" + lessonId);
     } catch (e) {
       toast({
@@ -65,13 +81,19 @@ export default function Page() {
     <Card>
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">Playground</CardTitle>
-        <CardDescription>
-          Tell Curyte what to generate using a completely custom prompt.
-        </CardDescription>
+        <CardDescription>{DEFAULT_CARD_DESCRIPTION}</CardDescription>
       </CardHeader>
-      <CardContent className="grid gap-4">
+      <CardContent className="grid gap-6">
         {loading ? (
-          <LessonSkeleton />
+          <>
+            <div>
+              <Progress value={progress * 100} />
+              <p className="mx-auto mt-1 w-fit text-sm text-muted-foreground">
+                {generationUpdate}
+              </p>
+            </div>
+            <LessonSkeleton />
+          </>
         ) : (
           <Form {...form}>
             <form

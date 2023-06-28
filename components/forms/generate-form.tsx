@@ -1,13 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Key, Link } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import type { z } from "zod";
 
 import { promisifyLessonIdStream } from "@/lib/rpc/read-lesson-stream";
 import {
@@ -19,20 +15,19 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
 import {
   Select,
   SelectContent,
@@ -40,14 +35,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/components/ui/use-toast";
 
-import { OAuthSignIn } from "../auth/oauth-signin";
-import { Icons } from "../icons";
-import { PasswordInput } from "../password-input";
 import LessonSkeleton from "../skeletons/lesson-skeleton";
-import { SignInForm } from "./signin-form";
 
 const SUBJECTS = [
   "Arts and music",
@@ -78,6 +68,9 @@ const GRADE_LEVELS = [
   "College+",
 ];
 
+const DEFAULT_GENERATION_UPDATE =
+  "Our AI is hard at work, but this may take up to 5 minutes.";
+
 export function GenerateForm() {
   const form = useForm<LessonPlanGenerationSchema>({
     resolver: zodResolver(generateSchema),
@@ -92,6 +85,10 @@ export function GenerateForm() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
+  const [generationUpdate, setGenerationUpdate] = useState(
+    DEFAULT_GENERATION_UPDATE
+  );
+  const [progress, setProgress] = useState(0);
 
   async function onSubmit(data: LessonPlanGenerationSchema) {
     try {
@@ -102,7 +99,21 @@ export function GenerateForm() {
         body: JSON.stringify(data),
       });
 
-      const lessonId = await promisifyLessonIdStream(response);
+      const lessonId = await promisifyLessonIdStream(
+        response,
+        (update, progress) => {
+          setGenerationUpdate(update);
+          setProgress(progress);
+        }
+      );
+      if (!lessonId) {
+        toast({
+          title: "Error",
+          description: "Something went wrong, please try again.",
+        });
+        setLoading(false);
+        return;
+      }
       router.push("/lessons/" + lessonId);
     } catch (e) {
       toast({
@@ -111,6 +122,8 @@ export function GenerateForm() {
       });
       console.error(e);
       setLoading(false);
+    } finally {
+      setGenerationUpdate(DEFAULT_GENERATION_UPDATE);
     }
   }
 
@@ -119,11 +132,15 @@ export function GenerateForm() {
       <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Generating...</CardTitle>
-          <CardDescription>
-            Our AI is hard at work, but this may take up to 5 minutes.
-          </CardDescription>
+          <CardDescription>{DEFAULT_GENERATION_UPDATE}</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="grid gap-6">
+          <div>
+            <Progress value={progress * 100} />
+            <p className="mx-auto mt-1 w-fit text-sm text-muted-foreground">
+              {generationUpdate}
+            </p>
+          </div>
           <LessonSkeleton />
         </CardContent>
       </Card>

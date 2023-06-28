@@ -1,7 +1,6 @@
 import { ServerRuntime } from "next";
 import { NextResponse } from "next/server";
-import { querySimple } from "@/ai/query";
-import { z } from "zod";
+import { queryComplex } from "@/ai/query";
 
 import { supabase } from "@/lib/supabase";
 import { playgroundSchema } from "@/lib/validations/playground";
@@ -29,42 +28,83 @@ export async function POST(request: Request) {
     async start(controller) {
       console.time("Fetching data and streaming time");
 
-      // Provide an initial response
-      controller.enqueue(encoder.encode("Fetching lesson plan..."));
+      try {
+        // Fetch the data
+        console.time("Query execution time");
+        const content = await queryComplex(query, (message, progress) => {
+          controller.enqueue(
+            encoder.encode(
+              JSON.stringify({
+                status: "in-progress",
+                message,
+                progress,
+              })
+            )
+          );
+        });
+        console.timeEnd("Query execution time");
 
-      // Fetch the data
-      console.time("Query execution time");
-      const content = await querySimple(query);
-      console.timeEnd("Query execution time");
+        console.time("Inserting data time");
+        const { data, error } = await supabase
+          .from("generated")
+          .insert({ params: {}, query, content })
+          .select();
+        console.timeEnd("Inserting data time");
 
-      console.time("Inserting data time");
-      const { data, error } = await supabase
-        .from("generated")
-        .insert({ params: {}, query, content })
-        .select();
-      console.timeEnd("Inserting data time");
+        // Handle errors
+        if (error) {
+          console.error("Error generating lesson plan:", error.message);
+          controller.enqueue(
+            encoder.encode(
+              JSON.stringify({
+                status: "error",
+                message: "Error generating lesson plan: " + error.message,
+              })
+            )
+          );
+          controller.close();
+          return;
+        }
 
-      // Handle errors
-      if (error) {
-        console.error("Error generating lesson plan:", error.message);
+        if (!data?.length) {
+          console.error("Error generating lesson plan: No data");
+          controller.enqueue(
+            encoder.encode(
+              JSON.stringify({
+                status: "error",
+                message: "Error generating lesson plan",
+              })
+            )
+          );
+          controller.close();
+          return;
+        }
+
+        // Stream the final result
         controller.enqueue(
-          encoder.encode("Error generating lesson plan: " + error.message)
+          encoder.encode(JSON.stringify({ status: "success", id: data[0].id }))
         );
-        controller.close();
-        return;
-      }
+      } catch (error: unknown) {
+        // Note the type assertion here
+        console.error("Unexpected error:", error);
+        let errorMessage = "Unexpected error occurred";
 
-      if (!data?.length) {
-        console.error("Error generating lesson plan: No data");
-        controller.enqueue(encoder.encode("Error generating lesson plan"));
-        controller.close();
-        return;
-      }
+        if (error instanceof Error) {
+          errorMessage += ": " + error.message;
+        }
 
-      // Stream the result
-      controller.enqueue(encoder.encode(JSON.stringify({ id: data[0].id })));
-      controller.close();
-      console.timeEnd("Fetching data and streaming time");
+        controller.enqueue(
+          encoder.encode(
+            JSON.stringify({
+              status: "error",
+              message: errorMessage,
+            })
+          )
+        );
+      } finally {
+        controller.close();
+        console.timeEnd("Fetching data and streaming time");
+      }
     },
   });
 

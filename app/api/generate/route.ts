@@ -1,94 +1,122 @@
 import { ServerRuntime } from "next";
 import { NextResponse } from "next/server";
-import { querySimple } from "@/ai/query";
+import { queryComplex } from "@/ai/query";
 
 import { supabase } from "@/lib/supabase";
 import {
   generateLessonPlanStr,
   generateSchema,
 } from "@/lib/validations/generate";
+import { playgroundSchema } from "@/lib/validations/playground";
 
 export const runtime: ServerRuntime = "edge";
 
 export async function POST(request: Request) {
-  const startTime = Date.now();
-  console.log(
-    `[INFO] Processing request started at ${new Date(startTime).toISOString()}`
-  );
+  console.time("POST request processing time");
 
+  // Validate the parameters
+  let rawParams;
+  let query = "";
   try {
-    const rawParams = await request.json();
-
-    // Validate input parameters
     const params = generateSchema.parse(rawParams);
     console.log("[INFO] Input parameters validated successfully");
 
     const query = generateLessonPlanStr(params);
-    const queryStartTime = Date.now();
+  } catch (error) {
+    console.error("Invalid parameters:", error);
+    return new NextResponse(JSON.stringify({ error: "Invalid parameters" }), {
+      status: 400,
+    });
+  }
 
-    // Fetch the data
-    const content = await querySimple(query);
-    console.log(`[INFO] Query executed in ${Date.now() - queryStartTime}ms`);
+  const encoder = new TextEncoder();
+  const customReadable = new ReadableStream({
+    async start(controller) {
+      console.time("Fetching data and streaming time");
 
-    const insertStartTime = Date.now();
-    const { data, error } = await supabase
-      .from("generated")
-      .insert({ params, query, content })
-      .select();
-    console.log(
-      `[INFO] Data insertion executed in ${Date.now() - insertStartTime}ms`
-    );
+      try {
+        // Fetch the data
+        console.time("Query execution time");
+        const content = await queryComplex(query, (message, progress) => {
+          controller.enqueue(
+            encoder.encode(
+              JSON.stringify({
+                status: "in-progress",
+                message,
+                progress,
+              })
+            )
+          );
+        });
+        console.timeEnd("Query execution time");
 
-    const encoder = new TextEncoder();
-    const customReadable = new ReadableStream({
-      async start(controller) {
-        // Provide an initial response
-        controller.enqueue(encoder.encode("Fetching lesson plan..."));
+        console.time("Inserting data time");
+        const { data, error } = await supabase
+          .from("generated")
+          .insert({ params: {}, query, content })
+          .select();
+        console.timeEnd("Inserting data time");
 
         // Handle errors
         if (error) {
-          console.error(
-            `[ERROR] Error generating lesson plan: ${error.message}`
-          );
+          console.error("Error generating lesson plan:", error.message);
           controller.enqueue(
-            encoder.encode(`Error generating lesson plan: ${error.message}`)
+            encoder.encode(
+              JSON.stringify({
+                status: "error",
+                message: "Error generating lesson plan: " + error.message,
+              })
+            )
           );
           controller.close();
           return;
         }
 
         if (!data?.length) {
-          console.error(
-            "[ERROR] Error generating lesson plan: No data returned"
+          console.error("Error generating lesson plan: No data");
+          controller.enqueue(
+            encoder.encode(
+              JSON.stringify({
+                status: "error",
+                message: "Error generating lesson plan",
+              })
+            )
           );
-          controller.enqueue(encoder.encode("Error generating lesson plan"));
           controller.close();
           return;
         }
 
-        // Stream the result
-        controller.enqueue(encoder.encode(JSON.stringify({ id: data[0].id })));
+        // Stream the final result
+        controller.enqueue(
+          encoder.encode(JSON.stringify({ status: "success", id: data[0].id }))
+        );
+      } catch (error: unknown) {
+        // Note the type assertion here
+        console.error("Unexpected error:", error);
+        let errorMessage = "Unexpected error occurred";
+
+        if (error instanceof Error) {
+          errorMessage += ": " + error.message;
+        }
+
+        controller.enqueue(
+          encoder.encode(
+            JSON.stringify({
+              status: "error",
+              message: errorMessage,
+            })
+          )
+        );
+      } finally {
         controller.close();
-      },
-    });
-
-    console.log(`[INFO] Request processed in ${Date.now() - startTime}ms`);
-
-    return new Response(customReadable, {
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-    });
-  } catch (error) {
-    console.error(
-      `[ERROR] An error occurred while processing the request: ${error}`
-    );
-    return new Response(
-      JSON.stringify({
-        error: "An error occurred while processing the request",
-      }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json; charset=utf-8" },
+        console.timeEnd("Fetching data and streaming time");
       }
-    );
-  }
+    },
+  });
+
+  console.timeEnd("POST request processing time");
+
+  return new Response(customReadable, {
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+  });
 }

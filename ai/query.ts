@@ -1,21 +1,29 @@
 import {
+  LLMChain,
   RetrievalQAChain,
+  loadQAMapReduceChain,
   loadQARefineChain,
   loadQAStuffChain,
 } from "langchain/chains";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { OpenAI } from "langchain/llms/openai";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 
-import { questionPrompt, refinePrompt } from "./openai";
+import {
+  assessmentPrompt,
+  designPrompt,
+  differentiatePrompt,
+  identifyAndDefinePrompt,
+  questionPrompt,
+  refinePrompt,
+  reflectPrompt,
+} from "./openai";
 import { getStandardsIndex } from "./pinecone";
 
 export async function querySimple(query: string) {
-  const pineconeIndex = await getStandardsIndex();
   console.time("Total runtime");
-  console.time("Pinecone Initialization");
-
-  console.timeEnd("Pinecone Initialization");
+  const pineconeIndex = await getStandardsIndex();
 
   console.time("PineconeStore Retrieval");
   const vectorStore = await PineconeStore.fromExistingIndex(
@@ -38,11 +46,8 @@ export async function querySimple(query: string) {
 }
 
 export async function queryQA(query: string) {
-  const pineconeIndex = await getStandardsIndex();
   console.time("Total runtime");
-  console.time("Pinecone Initialization");
-
-  console.timeEnd("Pinecone Initialization");
+  const pineconeIndex = await getStandardsIndex();
 
   console.time("PineconeStore Retrieval");
   const vectorStore = await PineconeStore.fromExistingIndex(
@@ -66,4 +71,115 @@ export async function queryQA(query: string) {
   console.timeEnd("Total runtime");
 
   return res.output_text;
+}
+/**
+ * A function that implements a lesson plan.
+ *
+ * Steps to create a lesson plan:
+ * 1. Identify the relevant academic standards that your lesson should address, and clearly define your lesson's objectives and goals aligned with these standards.
+ * 2. Design engaging instructional activities that both cater to diverse learning styles and scaffold learning, ensuring students can achieve the lesson's objectives.
+ * 3. Develop formative assessments to measure student progress throughout the lesson, providing opportunities for real-time feedback and adjustments.
+ * 4. Incorporate differentiated instruction techniques to meet the individual needs, abilities, and learning styles of all students, promoting inclusive learning.
+ * 5. Reflect and adjust your lesson plan based on student performance data, feedback, and self-reflection, ensuring continuous improvement and standards alignment.
+ */
+export async function queryComplex(
+  query: string,
+  progressCallback: (message: string, progress: number) => void = () => null
+) {
+  console.time("Total runtime");
+  const pineconeIndex = await getStandardsIndex();
+
+  const chatOpenAi = new ChatOpenAI({
+    openAIApiKey: process.env.OPENAI_API_KEY!,
+  });
+  // const openAi = new OpenAI({
+  //   openAIApiKey: process.env.OPENAI_API_KEY!,
+  // });
+
+  const vectorStore = await PineconeStore.fromExistingIndex(
+    new OpenAIEmbeddings(),
+    { pineconeIndex }
+  );
+
+  console.time("Identify / define call");
+  progressCallback("Identifying the relevant academic standards...", 0.1);
+  const chain = new RetrievalQAChain({
+    combineDocumentsChain: loadQAStuffChain(chatOpenAi, {
+      prompt: identifyAndDefinePrompt,
+    }),
+    retriever: vectorStore.asRetriever(),
+  });
+  const identifyRes = await chain.call({ query, verbose: true });
+  console.log(identifyRes);
+  console.timeEnd("Identify / define call");
+  const standards = identifyRes.text;
+
+  console.time("Design call");
+  progressCallback("Designing lesson plan...", 0.2);
+  const designChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: designPrompt,
+  });
+  const designRes = await designChain.call({
+    verbose: true,
+    standards,
+    question: query,
+  });
+  console.log(designRes);
+  console.timeEnd("Design call");
+  const plan = designRes.text;
+
+  console.time("Assessment call");
+  progressCallback("Developing formative assessments...", 0.4);
+  const assessmentChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: assessmentPrompt,
+  });
+  const assessmentRes = await assessmentChain.call({
+    verbose: true,
+    standards,
+    plan,
+    question: query,
+  });
+  console.log(assessmentRes);
+  console.timeEnd("Assessment call");
+  const assessment = assessmentRes.text;
+
+  console.time("Differentiate call");
+  progressCallback(
+    "Incorporating differentiated instruction techniques...",
+    0.6
+  );
+  const differentiateChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: differentiatePrompt,
+  });
+  const differentiateRes = await differentiateChain.call({
+    verbose: true,
+    plan,
+    question: query,
+  });
+  console.log(differentiateRes);
+  console.timeEnd("Differentiate call");
+  const differentiation = differentiateRes.text;
+
+  console.time("Reflect call");
+  progressCallback("Reflecting and adjusting lesson plan...", 0.8);
+  const reflectChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: reflectPrompt,
+  });
+  const reflectRes = await reflectChain.call({
+    verbose: true,
+    assessment,
+    differentiation,
+    plan,
+    standards,
+    question: query,
+  });
+  console.log(reflectRes);
+  console.timeEnd("Reflect call");
+
+  console.timeEnd("Total runtime");
+  return reflectRes.text;
 }
