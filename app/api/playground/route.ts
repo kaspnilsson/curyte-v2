@@ -85,6 +85,7 @@ export async function POST(request: Request) {
         controller.enqueue(
           encoder.encode(JSON.stringify({ status: "success", id: data[0].id }))
         );
+        controller.close();
       } catch (error: unknown) {
         // Note the type assertion here
         console.error("Unexpected error:", error);
@@ -102,8 +103,8 @@ export async function POST(request: Request) {
             })
           )
         );
-      } finally {
         controller.close();
+      } finally {
         console.timeEnd("Fetching data and streaming time");
       }
     },
