@@ -42,7 +42,9 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
-  const [generationUpdate, setGenerationUpdate] = useState("");
+  const [generationUpdate, setGenerationUpdate] = useState(
+    "Getting creative..."
+  );
   const [progress, setProgress] = useState(0);
 
   async function onSubmit({ query }: PlaygroundGenerationSchema) {
