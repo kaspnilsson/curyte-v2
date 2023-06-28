@@ -1,3 +1,6 @@
+// TODO: not this
+"use client";
+
 import Link from "next/link";
 
 import { supabase } from "@/lib/supabase";
