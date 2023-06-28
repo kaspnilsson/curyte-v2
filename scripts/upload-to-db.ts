@@ -3,165 +3,126 @@
  */
 
 import fs from "fs";
-import http from "http";
-import https from "https";
-import os from "os";
 import path from "path";
-import url from "url";
-import { promisify } from "util";
-import { PineconeClient } from "@pinecone-database/pinecone";
 import { VectorOperationsApi } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch";
 import * as dotenv from "dotenv";
+import { BaseDocumentLoader } from "langchain/dist/document_loaders/base";
+import { DocxLoader } from "langchain/document_loaders/fs/docx";
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { TensorFlowEmbeddings } from "langchain/embeddings/tensorflow";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 
 import { getStandardsIndex } from "../ai/pinecone";
 
-interface Row {
-  label: string;
-  href: string;
-}
+const tf = require("@tensorflow/tfjs-node-gpu");
+
+const FILE_DIR = "/var/folders/lr/8f3f9h252bd4hvdl8ywvlc6h0000gn/T75YwsW/";
+const MAX_CONCURRENT_FILES = 25; // Set the maximum number of concurrent files to process
 
 const splitter = new RecursiveCharacterTextSplitter();
 
-const setTimeoutPromise = promisify(setTimeout);
+function getLoaderFromPath(path: string): BaseDocumentLoader {
+  if (path.includes(".pdf")) {
+    return new PDFLoader(path, { splitPages: false });
+  }
+  if (path.includes(".docx")) {
+    return new DocxLoader(path);
+  }
 
-async function downloadFile(
-  fileUrl: string,
-  outputDir: string,
-  timeoutDurationMs = 600_000
-) {
-  return new Promise<string>((resolve, reject) => {
-    const now = Date.now();
-    // Parse the filename from the URL
-    const parsedUrl = new url.URL(fileUrl);
-    const filename = path.basename(parsedUrl.pathname);
-
-    // Create a writable stream for the file in the output directory
-    const outputPath = path.join(outputDir, filename);
-
-    // Check if the file already exists
-    if (fs.existsSync(outputPath)) {
-      console.log(`File ${filename} already exists, skipping download`);
-      resolve(outputPath);
-      return;
-    }
-
-    const fileStream = fs.createWriteStream(outputPath);
-
-    const get = fileUrl.startsWith("https:") ? https.get : http.get;
-
-    get(fileUrl, (response) => {
-      response.pipe(fileStream);
-      fileStream.on("finish", () => {
-        console.log(
-          "Finished downloading",
-          outputPath,
-          "in",
-          Date.now() - now,
-          "ms"
-        );
-        resolve(outputPath);
-      });
-      fileStream.on("error", reject);
-    }).on("error", reject); // Catch network errors
-
-    // Timeout
-    setTimeoutPromise(timeoutDurationMs).then(() => {
-      reject(
-        new Error(
-          `Download of ${outputPath} timed out after ${timeoutDurationMs} ms`
-        )
-      );
-    });
-  });
+  throw new Error("Unknown file type for path " + path);
 }
 
-async function loadFile(path: string, pineconeIndex: VectorOperationsApi) {
+async function loadFile(filePath: string, pineconeIndex: VectorOperationsApi) {
   try {
     const now = Date.now();
-    console.log("loading text content from ", path);
-    const loader = new PDFLoader(path, { splitPages: false });
+    console.log("loading text content from ", filePath);
+    const loader = getLoaderFromPath(filePath);
     const docs = await loader.loadAndSplit(splitter);
-    console.log("split", path, "into docs");
+    docs.forEach((doc) => {
+      if (doc?.metadata?.pdf?.metadata) {
+        delete doc.metadata.pdf.metadata;
+      }
+    });
 
     // TODO generate metadata
-    // TODO trim metadata from pdf subdir
     // TODO maybe pre-process docs with AI?
-    await PineconeStore.fromDocuments(docs, new OpenAIEmbeddings(), {
-      pineconeIndex,
-    });
+    await PineconeStore.fromDocuments(
+      docs,
+      new OpenAIEmbeddings({
+        maxConcurrency: MAX_CONCURRENT_FILES,
+        maxRetries: 10,
+      }),
+      // new TensorFlowEmbeddings(),
+      {
+        pineconeIndex,
+      }
+    );
     console.log(
       "embedded docs into pinecone for",
-      path,
+      filePath,
       "in",
       Date.now() - now,
       "ms"
     );
+
+    // Write the file name to uploaded.txt
+    fs.appendFileSync(path.join(FILE_DIR, "uploaded.txt"), `${filePath}\n`);
   } catch (e) {
-    console.error("Error during loading for", path);
+    console.error("Error during loading for", filePath);
     console.error(e);
+
+    // Write the file name to failed.txt
+    fs.appendFileSync(path.join(FILE_DIR, "failed.txt"), `${filePath}\n`);
   }
 }
 
-async function downloadAllFiles() {
+async function loadAllFiles() {
+  const loadingStart = Date.now();
+
   // Init pinecone
   console.log("initializing pinecone client");
 
   const pineconeIndex = await getStandardsIndex();
 
-  const files: Set<string> = new Set();
-
   // Get files
   console.log("reading files");
-  fs.readdirSync(path.join(__dirname, "../data"))
-    .filter((filename: string) => filename.endsWith(".json"))
-    .forEach(async (filename: string) => {
-      const filepath = path.join(__dirname, "../data", filename);
-      const file = fs.readFileSync(filepath, "utf8");
+  const files = fs
+    .readdirSync(FILE_DIR)
+    .filter(
+      (filename: string) =>
+        filename.includes(".docx") || filename.includes(".pdf")
+    );
 
-      // Skip if file is empty
-      if (file === "") {
-        console.log(`Skipping ${filename} because it is empty.`);
-        return;
-      }
+  const filesQueue = [...files];
+  const promises = [];
+  for (let i = 0; i < MAX_CONCURRENT_FILES; i++) {
+    promises.push(
+      new Promise<void>(async (resolve) => {
+        while (filesQueue.length) {
+          const file = filesQueue.pop();
+          if (file) {
+            await loadFile(path.join(FILE_DIR, file), pineconeIndex);
+          }
+        }
+        resolve();
+      })
+    );
+  }
 
-      for (const { label, href } of JSON.parse(file) as Row[]) {
-        files.add(href);
-      }
-    });
+  await Promise.all(promises);
 
-  // Create a temporary directory
-  const tempDir = fs.mkdtempSync(os.tmpdir());
-  const loadingStart = Date.now();
-  // Download all files
-  const downloadPromises = Array.from(files).map(
-    (file) => downloadFile(file, tempDir)
-    // .then((path) => loadFile(path, pineconeIndex))
-  );
-
-  await Promise.all(downloadPromises);
   console.log(
     "Loaded all",
-    downloadPromises.length,
+    files.length,
     "files in",
     Date.now() - loadingStart,
     "ms"
   );
-
-  console.log("Files available at ", tempDir);
-
-  // // After you're done with the files, clean up the directory
-  // fs.readdirSync(tempDir).forEach((file) => {
-  //   fs.unlinkSync(path.join(tempDir, file));
-  // });
-  // fs.rmdirSync(tempDir);
-  // console.log("Temporary directory has been cleaned up");
 }
 
 dotenv.config();
 
 // Kick off the download process
-downloadAllFiles().catch(console.error);
+loadAllFiles().catch(console.error);
