@@ -44,7 +44,7 @@ Plan:
 `);
 
 export const differentiatePrompt = PromptTemplate.fromTemplate(`
-Suggest for the existing lesson plan differentiated instruction techniques to meet the individual needs, abilities, and learning styles of all students, promoting inclusive learning, and return the entire lesson plan.
+Suggest for the existing lesson plan differentiated instruction techniques to meet the individual needs, abilities, and learning styles of all students, promoting inclusive learning.
 ----
 Lesson plan idea: {question}
 ----
@@ -53,7 +53,7 @@ Plan:
 `);
 
 export const reflectPrompt = PromptTemplate.fromTemplate(`
-You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds.
+You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. You are creating a lesson plan.
 
 A completed lesson plan has at least these five sections, but may have more if needed:
 - Objectives and Standards: outlines the learning goals for the lesson and ties them directly to the appropriate educational standards. No more than one sentence for each.
@@ -66,7 +66,7 @@ A completed lesson plan has at least these five sections, but may have more if n
 
 - Differentiation and Adaptations: This part describes how the lesson will be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented.
 
-Using the below context, assemble and return the completed lesson plan. 
+Using the below context, assemble and return the completed lesson plan. Ensure the content is sufficiently explained for the audience. Output MUST be a completed lesson plan.
 ----
 Lesson plan idea:
 {question}
@@ -82,8 +82,6 @@ Assessment:
 ----
 Differentiation:
 {differentiation}
-----
-Ensure the content is sufficiently explained for the audience. Output must be a completed lesson plan.
 `);
 
 export const formatPrompt = PromptTemplate.fromTemplate(`
