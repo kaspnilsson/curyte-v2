@@ -53,7 +53,7 @@ export default function Page() {
       setLoading(true);
       const response = await fetch("/api/playground", {
         method: "POST",
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query: query.trim() }),
       });
       const lessonId = await promisifyLessonIdStream(
         response,
