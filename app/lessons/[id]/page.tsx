@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { supabase } from "@/lib/supabase";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,7 +22,10 @@ export default async function Page({ params }: { params: { id: string } }) {
       />
       <Card>
         <CardContent className="mt-6 grid gap-4">
-          <ReactMarkdown className="prose prose-sm prose-zinc max-w-none dark:prose-invert prose-headings:font-bold prose-headings:tracking-tighter">
+          <ReactMarkdown
+            className="prose prose-sm prose-zinc max-w-none dark:prose-invert prose-headings:font-bold prose-headings:tracking-tighter"
+            remarkPlugins={[remarkGfm]}
+          >
             {lesson.content}
           </ReactMarkdown>
         </CardContent>
