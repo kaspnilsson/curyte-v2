@@ -64,7 +64,10 @@ export default async function Page() {
                 </TableCell>
                 <TableCell>{lesson.params.topic || "No topic"}</TableCell> */}
                 <TableCell>{lesson.query}</TableCell>
-                <TableCell suppressHydrationWarning>
+                <TableCell
+                  suppressHydrationWarning
+                  className="text-muted-foreground"
+                >
                   {new Date(lesson.created_at).toLocaleString()}
                 </TableCell>
                 <TableCell>
