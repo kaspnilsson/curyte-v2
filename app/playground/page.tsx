@@ -10,14 +10,9 @@ import {
   PlaygroundGenerationSchema,
   playgroundSchema,
 } from "@/lib/validations/playground";
+import useBlockPageNavigation from "@/hooks/use-block-page-navigation";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -47,10 +42,14 @@ export default function Page() {
     "Getting creative..."
   );
   const [progress, setProgress] = useState(0);
+  const { blockNavigation, allowNavigation } = useBlockPageNavigation();
 
   async function onSubmit({ query }: PlaygroundGenerationSchema) {
     try {
       setLoading(true);
+      blockNavigation(
+        "Are you sure you want to leave? Your lesson is still generating."
+      );
       const response = await fetch("/api/playground", {
         method: "POST",
         body: JSON.stringify({ query: query.trim() }),
@@ -70,6 +69,7 @@ export default function Page() {
         setLoading(false);
         return;
       }
+      allowNavigation();
       router.push("/lessons/" + lessonId);
     } catch (e) {
       toast({
@@ -77,6 +77,7 @@ export default function Page() {
         description: "Something went wrong, please try again: " + e,
       });
       setLoading(false);
+      allowNavigation();
     }
   }
 

@@ -10,6 +10,7 @@ import {
   LessonPlanGenerationSchema,
   generateSchema,
 } from "@/lib/validations/generate";
+import useBlockPageNavigation from "@/hooks/use-block-page-navigation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -89,10 +90,14 @@ export function GenerateForm() {
     DEFAULT_GENERATION_UPDATE
   );
   const [progress, setProgress] = useState(0);
+  const { blockNavigation, allowNavigation } = useBlockPageNavigation();
 
   async function onSubmit(data: LessonPlanGenerationSchema) {
     try {
       setLoading(true);
+      blockNavigation(
+        "Are you sure you want to leave? Your lesson is still generating."
+      );
 
       const response = await fetch("/api/generate", {
         method: "POST",
@@ -114,6 +119,7 @@ export function GenerateForm() {
         setLoading(false);
         return;
       }
+      allowNavigation();
       router.push("/lessons/" + lessonId);
     } catch (e) {
       toast({
@@ -124,6 +130,7 @@ export function GenerateForm() {
       setLoading(false);
     } finally {
       setGenerationUpdate(DEFAULT_GENERATION_UPDATE);
+      allowNavigation();
     }
   }
 
