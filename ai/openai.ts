@@ -85,7 +85,7 @@ Differentiation:
 `);
 
 export const formatPrompt = PromptTemplate.fromTemplate(`
-Reformat the following content using markdown. Output must be a completed lesson plan.
+Reformat the following content using markdown. Output must be a completed lesson plan. Put the grade level, subject, and relevant standards in a table at the beginning.
 ----
 {plan}
 `);
