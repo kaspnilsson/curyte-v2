@@ -149,11 +149,7 @@ export function GenerateForm() {
 
   return (
     <Card>
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Generate</CardTitle>
-        <CardDescription>Tell Curyte what to generate.</CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
+      <CardContent className="grid gap-4 pt-6">
         <Form {...form}>
           <form
             className="grid gap-4"

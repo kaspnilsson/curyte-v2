@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <Card>
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Generated lesson</CardTitle>
+        <CardTitle className="text-2xl">✨ Generated lesson</CardTitle>
         <CardDescription>
           Generated with the instruction: {lesson.query}
         </CardDescription>

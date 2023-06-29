@@ -1,21 +1,16 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { PageHeader } from "@/components/page-header";
 import LessonSkeleton from "@/components/skeletons/lesson-skeleton";
 
 export default function Loading() {
   return (
-    <Card>
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Loading...</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <LessonSkeleton />
-      </CardContent>
-    </Card>
+    <>
+      <PageHeader title="🕣 Loading" description="Fetching data..." />
+      <Card>
+        <CardContent className="pt-6">
+          <LessonSkeleton />
+        </CardContent>
+      </Card>
+    </>
   );
 }

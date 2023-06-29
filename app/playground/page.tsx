@@ -30,6 +30,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { PageHeader } from "@/components/page-header";
 import LessonSkeleton from "@/components/skeletons/lesson-skeleton";
 
 const DEFAULT_CARD_DESCRIPTION =
@@ -80,55 +81,59 @@ export default function Page() {
   }
 
   return (
-    <Card>
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Playground</CardTitle>
-        <CardDescription>{DEFAULT_CARD_DESCRIPTION}</CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-6">
-        {loading ? (
-          <>
-            <div>
-              <Progress value={progress * 100} />
-              <p className="mx-auto mt-1 w-fit text-sm italic text-muted-foreground">
-                {generationUpdate}
-              </p>
-            </div>
-            <LessonSkeleton />
-          </>
-        ) : (
-          <Form {...form}>
-            <form
-              className="grid gap-4"
-              onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
-            >
-              <FormField
-                control={form.control}
-                name="query"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Query</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Generate a lesson about trains"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>
-                      Text will be sent to generation APIs in raw form.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button>
-                Generate
-                <span className="sr-only">Generate</span>
-              </Button>
-            </form>
-          </Form>
-        )}
-      </CardContent>
-    </Card>
+    <>
+      <PageHeader
+        title={"🛝 Playground"}
+        description={DEFAULT_CARD_DESCRIPTION}
+      />
+      <Card>
+        <CardContent className="grid gap-6 pt-6">
+          {loading ? (
+            <>
+              <div>
+                <Progress value={progress * 100} />
+                <p className="mx-auto mt-1 w-fit text-sm italic text-muted-foreground">
+                  {generationUpdate}
+                </p>
+              </div>
+              <LessonSkeleton />
+            </>
+          ) : (
+            <Form {...form}>
+              <form
+                className="grid gap-4"
+                onSubmit={(...args) =>
+                  void form.handleSubmit(onSubmit)(...args)
+                }
+              >
+                <FormField
+                  control={form.control}
+                  name="query"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Query</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Generate a lesson about trains"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Text will be sent to generation APIs in raw form.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button>
+                  Generate
+                  <span className="sr-only">Generate</span>
+                </Button>
+              </form>
+            </Form>
+          )}
+        </CardContent>
+      </Card>
+    </>
   );
 }
