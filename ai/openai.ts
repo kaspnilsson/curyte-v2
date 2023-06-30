@@ -17,9 +17,9 @@ export const refinePrompt =
   If the context isn't useful, return the original answer in its original form with no clarifications or additional notes.`);
 
 export const identifyAndDefinePrompt = PromptTemplate.fromTemplate(
-  `You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Given the following lesson plan idea, identify the most relevant academic standards that your lesson should address, and clearly define your lesson's objectives and goals aligned with these standards. If no standards are highly relevant, do not reference them, but do continue with the task.
-  
-  {question}`
+  `You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Given the following lesson plan idea, identify the most relevant academic standards that your lesson should address, and clearly define your lesson's objectives aligned with these standards. If no standards are highly relevant, do not reference them, but do continue with the task. Ensure that the the lesson plan adheres strictly to the idea provided.
+----
+Lesson plan idea: {question}`
 );
 
 export const activitiesPrompt = PromptTemplate.fromTemplate(`

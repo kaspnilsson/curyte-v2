@@ -14,7 +14,6 @@ import {
   activitiesPrompt,
   assessmentPrompt,
   differentiatePrompt,
-  formatPrompt,
   identifyAndDefinePrompt,
   questionPrompt,
   refinePrompt,
