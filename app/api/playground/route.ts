@@ -27,28 +27,41 @@ export async function POST(request: Request) {
   const customReadable = new ReadableStream({
     async start(controller) {
       console.time("Fetching data and streaming time");
-
+      const now = Date.now();
       try {
         // Fetch the data
         console.time("Query execution time");
-        const content = await queryComplex(query, (message, progress) => {
-          console.log("Got progress update:", message, progress);
-          controller.enqueue(
-            encoder.encode(
-              JSON.stringify({
-                status: "in-progress",
-                message,
-                progress,
-              })
-            )
-          );
-        });
+        let intermediates: string[] = [];
+        const content = await queryComplex(
+          query,
+          (message, progress) => {
+            console.log("Got progress update:", message, progress);
+            controller.enqueue(
+              encoder.encode(
+                JSON.stringify({
+                  status: "in-progress",
+                  message,
+                  progress,
+                })
+              )
+            );
+          },
+          (content) => {
+            intermediates.push(content);
+          }
+        );
         console.timeEnd("Query execution time");
 
         console.time("Inserting data time");
         const { data, error } = await supabase
           .from("generated")
-          .insert({ params: {}, query, content })
+          .insert({
+            params: {},
+            query,
+            content,
+            intermediate_generations: intermediates,
+            generation_time_ms: Date.now() - now,
+          })
           .select();
         console.timeEnd("Inserting data time");
 

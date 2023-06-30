@@ -86,7 +86,8 @@ export async function queryQA(query: string) {
  */
 export async function queryComplex(
   query: string,
-  progressCallback: (message: string, progress: number) => void = () => null
+  progressCallback: (message: string, progress: number) => void = () => null,
+  intermediateContentCallback: (message: string) => void = () => null
 ) {
   console.time("Total runtime");
   const pineconeIndex = await getStandardsIndex();
@@ -115,9 +116,9 @@ export async function queryComplex(
   // console.log(identifyRes);
   console.timeEnd("Identify / define call");
   const standards = identifyRes.text;
+  intermediateContentCallback(standards);
 
-  let progressSoFar = 0.1;
-
+  // let progressSoFar = 0.1;
   // const [activitiesRes, assessmentRes, differentiateRes] = await Promise.all([
   //   (async () => {
   //     console.time("Design call");
@@ -192,6 +193,8 @@ export async function queryComplex(
     question: query,
   });
   console.timeEnd("Plan call");
+  const plan = generatePlanRes.text;
+  intermediateContentCallback(plan);
 
   console.time("Reflect call");
   progressCallback("Reflecting and adjusting lesson plan...", 0.8);
@@ -205,7 +208,7 @@ export async function queryComplex(
     // assessment,
     // differentiation,
     // activities,
-    plan: generatePlanRes.text,
+    plan,
     standards,
     question: query,
   });

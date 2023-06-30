@@ -4,6 +4,7 @@ import { queryComplex } from "@/ai/query";
 
 import { supabase } from "@/lib/supabase";
 import {
+  LessonPlanGenerationSchema,
   generateLessonPlanStr,
   generateSchema,
 } from "@/lib/validations/generate";
@@ -14,11 +15,11 @@ export async function POST(request: Request) {
   console.time("POST request processing time");
 
   // Validate the parameters
-  let rawParams;
+  let params: LessonPlanGenerationSchema | null = null;
   let query = "";
   try {
-    rawParams = await request.json();
-    const params = generateSchema.parse(rawParams);
+    const rawParams = await request.json();
+    params = generateSchema.parse(rawParams);
 
     query = generateLessonPlanStr(params);
   } catch (error) {
@@ -33,56 +34,63 @@ export async function POST(request: Request) {
     async start(controller) {
       console.time("Fetching data and streaming time");
 
+      const now = Date.now();
+      function handleError(error: string) {
+        console.error("Error generating lesson plan:", error);
+        controller.enqueue(
+          encoder.encode(
+            JSON.stringify({
+              status: "error",
+              message: "Error generating lesson plan: " + error,
+            })
+          )
+        );
+        controller.close();
+      }
+
       try {
         // Fetch the data
         console.time("Query execution time");
-        const content = await queryComplex(query, (message, progress) => {
-          console.log("Got progress update:", message, progress);
-          controller.enqueue(
-            encoder.encode(
-              JSON.stringify({
-                status: "in-progress",
-                message,
-                progress,
-              })
-            )
-          );
-        });
+        let intermediates: string[] = [];
+        const content = await queryComplex(
+          query,
+          (message, progress) => {
+            console.log("Got progress update:", message, progress);
+            controller.enqueue(
+              encoder.encode(
+                JSON.stringify({
+                  status: "in-progress",
+                  message,
+                  progress,
+                })
+              )
+            );
+          },
+          (content) => {
+            intermediates.push(content);
+          }
+        );
         console.timeEnd("Query execution time");
 
-        console.time("Inserting data time");
-        const { data, error } = await supabase
+        let { data, error } = await supabase
           .from("generated")
-          .insert({ params: {}, query, content })
+          .insert({
+            params,
+            query,
+            content,
+            intermediate_generations: intermediates,
+            generation_time_ms: Date.now() - now,
+          })
           .select();
-        console.timeEnd("Inserting data time");
 
         // Handle errors
         if (error) {
-          console.error("Error generating lesson plan:", error.message);
-          controller.enqueue(
-            encoder.encode(
-              JSON.stringify({
-                status: "error",
-                message: "Error generating lesson plan: " + error.message,
-              })
-            )
-          );
-          controller.close();
+          handleError(error.message);
           return;
         }
 
         if (!data?.length) {
-          console.error("Error generating lesson plan: No data");
-          controller.enqueue(
-            encoder.encode(
-              JSON.stringify({
-                status: "error",
-                message: "Error generating lesson plan",
-              })
-            )
-          );
-          controller.close();
+          handleError("No data returned");
           return;
         }
 
