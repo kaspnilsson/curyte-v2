@@ -11,8 +11,8 @@ import { OpenAI } from "langchain/llms/openai";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 
 import {
+  activitiesPrompt,
   assessmentPrompt,
-  designPrompt,
   differentiatePrompt,
   formatPrompt,
   identifyAndDefinePrompt,
@@ -115,27 +115,29 @@ export async function queryComplex(
   console.timeEnd("Identify / define call");
   const standards = identifyRes.text;
 
-  console.time("Design call");
-  progressCallback("Designing lesson plan...", 0.2);
-  const designChain = new LLMChain({
-    llm: chatOpenAi,
-    prompt: designPrompt,
-  });
-  const designRes = await designChain.call({
-    verbose: true,
-    standards,
-    question: query,
-  });
-  // console.log(designRes);
-  console.timeEnd("Design call");
-  const plan = designRes.text;
+  let progressSoFar = 0.1;
 
-  let progressSoFar = 0.2;
-
-  const [assessmentRes, differentiateRes] = await Promise.all([
+  const [activitiesRes, assessmentRes, differentiateRes] = await Promise.all([
+    (async () => {
+      console.time("Design call");
+      progressSoFar += 0.1;
+      progressCallback("Designing activities plan...", progressSoFar);
+      const activitiesChain = new LLMChain({
+        llm: chatOpenAi,
+        prompt: activitiesPrompt,
+      });
+      const res = await activitiesChain.call({
+        verbose: true,
+        standards,
+        question: query,
+      });
+      // console.log(activitiesRes);
+      console.timeEnd("Design call");
+      return res;
+    })(),
     (async () => {
       console.time("Assessment call");
-      progressSoFar += 0.2;
+      progressSoFar += 0.1;
       progressCallback("Developing formative assessments...", progressSoFar);
       const assessmentChain = new LLMChain({
         llm: chatOpenAi,
@@ -144,7 +146,7 @@ export async function queryComplex(
       const res = await assessmentChain.call({
         verbose: true,
         standards,
-        plan,
+        activities,
         question: query,
       });
       // console.log(res);
@@ -153,7 +155,7 @@ export async function queryComplex(
     })(),
     (async () => {
       console.time("Differentiate call");
-      progressSoFar += 0.2;
+      progressSoFar += 0.1;
       progressCallback(
         "Incorporating differentiated instruction techniques...",
         progressSoFar
@@ -164,8 +166,8 @@ export async function queryComplex(
       });
       const res = await differentiateChain.call({
         verbose: true,
-        plan,
         question: query,
+        standards,
       });
       // console.log(res);
       console.timeEnd("Differentiate call");
@@ -173,6 +175,7 @@ export async function queryComplex(
     })(),
   ]);
 
+  const activities = activitiesRes.text;
   const assessment = assessmentRes.text;
   const differentiation = differentiateRes.text;
 
@@ -186,26 +189,26 @@ export async function queryComplex(
     verbose: true,
     assessment,
     differentiation,
-    plan,
+    activities,
     standards,
     question: query,
   });
   // console.log(reflectRes);
   console.timeEnd("Reflect call");
 
-  console.time("Formatting call");
-  progressCallback("Formatting lesson plan...", 0.9);
-  const formatChain = new LLMChain({
-    llm: chatOpenAi,
-    prompt: formatPrompt,
-  });
-  const formatRes = await formatChain.call({
-    verbose: true,
-    plan: reflectRes.text,
-  });
-  // console.log(formatRes);
-  console.timeEnd("Formatting call");
+  // console.time("Formatting call");
+  // progressCallback("Formatting lesson plan...", 0.9);
+  // const formatChain = new LLMChain({
+  //   llm: chatOpenAi,
+  //   prompt: formatPrompt,
+  // });
+  // const formatRes = await formatChain.call({
+  //   verbose: true,
+  //   plan: reflectRes.text,
+  // });
+  // // console.log(formatRes);
+  // console.timeEnd("Formatting call");
 
   console.timeEnd("Total runtime");
-  return formatRes.text;
+  return reflectRes.text;
 }

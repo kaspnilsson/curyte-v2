@@ -22,8 +22,8 @@ export const identifyAndDefinePrompt = PromptTemplate.fromTemplate(
   {question}`
 );
 
-export const designPrompt = PromptTemplate.fromTemplate(`
-You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Using the objectives and standards, design the lesson plan, and add into the lesson plan three activities that both cater to diverse learning styles and scaffold learning, ensuring students can achieve the lesson's objectives.
+export const activitiesPrompt = PromptTemplate.fromTemplate(`
+You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. Using the objectives and standards, create three activities that both cater to diverse learning styles and scaffold learning, ensuring students can achieve the lesson's objectives.
 ----
 Lesson plan idea: {question}
 ----
@@ -38,35 +38,30 @@ Lesson plan idea: {question}
 ----
 Standards & objectives:
 {standards}
-----
-Plan:
-{plan}
 `);
 
 export const differentiatePrompt = PromptTemplate.fromTemplate(`
-Suggest for the existing lesson plan differentiated instruction techniques to meet the individual needs, abilities, and learning styles of all students, promoting inclusive learning.
+Explain how the lesson could be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented.
 ----
 Lesson plan idea: {question}
 ----
-Plan:
-{plan}
+Standards & objectives:
+{standards}
 `);
 
 export const reflectPrompt = PromptTemplate.fromTemplate(`
 You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. You are creating a lesson plan.
 
-A completed lesson plan has at least these five sections, but may have more if needed:
-- Objectives and Standards: outlines the learning goals for the lesson and ties them directly to the appropriate educational standards. No more than one sentence for each.
+A completed lesson plan is defined as:
+- A title
+- A table with the grade level, subject, and relevant academic standards.
+- A section called "Learning objectives" that details the lesson's objectives and goals aligned with these standards
+- A section called "Materials and resources" that details the teaching methods, activities, discussions, and interactive elements that will be utilized to reach the lesson's objectives
+- A section called "Instructional procedures" that details the lesson's activities, including the time allotted for each activity
+- A section called "Assessment" with three questions that can be used to measure student progress throughout the lesson, and a sample answer key
+- A section called "Differentiation and adaptations" that explains how the lesson could be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented.
 
-- Materials and Resources: briefly lists all the necessary supplies, textbooks, technology, and any other resources needed to successfully carry out the lesson. No more than one sentence for each.
-
-- Instructional Procedures: details the teaching methods, activities, discussions, and interactive elements that will be utilized to reach the lesson's objectives.
-
-- Assessments: This section includes formative and summative assessments used to measure student learning and check for understanding, which should directly assess the stated objectives and standards. There should also be a short sample answer for each question.
-
-- Differentiation and Adaptations: This part describes how the lesson will be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented.
-
-Using the below context, assemble and return the completed lesson plan. Ensure the content is sufficiently explained for the audience. Output MUST be a completed lesson plan.
+Using the below context, assemble and return the completed lesson plan. Ensure the content is sufficiently explained for the audience. Output MUST be a completed lesson plan. Format using markdown.
 ----
 Lesson plan idea:
 {question}
@@ -74,18 +69,12 @@ Lesson plan idea:
 Standards & objectives:
 {standards}
 ----
-Plan content:
-{plan}
+Activities:
+{activities}
 ----
 Assessment:
 {assessment}
 ----
 Differentiation:
 {differentiation}
-`);
-
-export const formatPrompt = PromptTemplate.fromTemplate(`
-Reformat the following content using markdown. Output must be a completed lesson plan. Put the grade level, subject, and relevant standards in a table at the beginning.
-----
-{plan}
 `);
