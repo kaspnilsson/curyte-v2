@@ -14,10 +14,12 @@ import {
   activitiesPrompt,
   assessmentPrompt,
   differentiatePrompt,
+  generatePlanBodyPrompt,
   identifyAndDefinePrompt,
   questionPrompt,
   refinePrompt,
   reflectPrompt,
+  reflectPromptSimpleInput,
 } from "./openai";
 import { getStandardsIndex } from "./pinecone";
 
@@ -116,79 +118,94 @@ export async function queryComplex(
 
   let progressSoFar = 0.1;
 
-  const [activitiesRes, assessmentRes, differentiateRes] = await Promise.all([
-    (async () => {
-      console.time("Design call");
-      progressSoFar += 0.1;
-      progressCallback("Designing activities plan...", progressSoFar);
-      const activitiesChain = new LLMChain({
-        llm: chatOpenAi,
-        prompt: activitiesPrompt,
-      });
-      const res = await activitiesChain.call({
-        verbose: true,
-        standards,
-        question: query,
-      });
-      // console.log(activitiesRes);
-      console.timeEnd("Design call");
-      return res;
-    })(),
-    (async () => {
-      console.time("Assessment call");
-      progressSoFar += 0.1;
-      progressCallback("Developing formative assessments...", progressSoFar);
-      const assessmentChain = new LLMChain({
-        llm: chatOpenAi,
-        prompt: assessmentPrompt,
-      });
-      const res = await assessmentChain.call({
-        verbose: true,
-        standards,
-        activities,
-        question: query,
-      });
-      // console.log(res);
-      console.timeEnd("Assessment call");
-      return res;
-    })(),
-    (async () => {
-      console.time("Differentiate call");
-      progressSoFar += 0.1;
-      progressCallback(
-        "Incorporating differentiated instruction techniques...",
-        progressSoFar
-      );
-      const differentiateChain = new LLMChain({
-        llm: chatOpenAi,
-        prompt: differentiatePrompt,
-      });
-      const res = await differentiateChain.call({
-        verbose: true,
-        question: query,
-        standards,
-      });
-      // console.log(res);
-      console.timeEnd("Differentiate call");
-      return res;
-    })(),
-  ]);
+  // const [activitiesRes, assessmentRes, differentiateRes] = await Promise.all([
+  //   (async () => {
+  //     console.time("Design call");
+  //     progressSoFar += 0.1;
+  //     progressCallback("Designing activities plan...", progressSoFar);
+  //     const activitiesChain = new LLMChain({
+  //       llm: chatOpenAi,
+  //       prompt: activitiesPrompt,
+  //     });
+  //     const res = await activitiesChain.call({
+  //       verbose: true,
+  //       standards,
+  //       question: query,
+  //     });
+  //     // console.log(activitiesRes);
+  //     console.timeEnd("Design call");
+  //     return res;
+  //   })(),
+  //   (async () => {
+  //     console.time("Assessment call");
+  //     progressSoFar += 0.1;
+  //     progressCallback("Developing formative assessments...", progressSoFar);
+  //     const assessmentChain = new LLMChain({
+  //       llm: chatOpenAi,
+  //       prompt: assessmentPrompt,
+  //     });
+  //     const res = await assessmentChain.call({
+  //       verbose: true,
+  //       standards,
+  //       activities,
+  //       question: query,
+  //     });
+  //     // console.log(res);
+  //     console.timeEnd("Assessment call");
+  //     return res;
+  //   })(),
+  //   (async () => {
+  //     console.time("Differentiate call");
+  //     progressSoFar += 0.1;
+  //     progressCallback(
+  //       "Incorporating differentiated instruction techniques...",
+  //       progressSoFar
+  //     );
+  //     const differentiateChain = new LLMChain({
+  //       llm: chatOpenAi,
+  //       prompt: differentiatePrompt,
+  //     });
+  //     const res = await differentiateChain.call({
+  //       verbose: true,
+  //       question: query,
+  //       standards,
+  //     });
+  //     // console.log(res);
+  //     console.timeEnd("Differentiate call");
+  //     return res;
+  //   })(),
+  // ]);
 
-  const activities = activitiesRes.text;
-  const assessment = assessmentRes.text;
-  const differentiation = differentiateRes.text;
+  // const activities = activitiesRes.text;
+  // const assessment = assessmentRes.text;
+  // const differentiation = differentiateRes.text;
+
+  console.time("Plan call");
+  progressCallback("Creating engaging activities...", 0.5);
+  const generatePlanChain = new LLMChain({
+    llm: chatOpenAi,
+    prompt: generatePlanBodyPrompt,
+  });
+  const generatePlanRes = await generatePlanChain.call({
+    verbose: true,
+    standards,
+    question: query,
+  });
+  console.timeEnd("Plan call");
 
   console.time("Reflect call");
   progressCallback("Reflecting and adjusting lesson plan...", 0.8);
   const reflectChain = new LLMChain({
     llm: chatOpenAi,
-    prompt: reflectPrompt,
+    // prompt: reflectPrompt,
+    prompt: reflectPromptSimpleInput,
   });
   const reflectRes = await reflectChain.call({
     verbose: true,
-    assessment,
-    differentiation,
-    activities,
+    // assessment,
+    // differentiation,
+    // activities,
+    plan: generatePlanRes.text,
     standards,
     question: query,
   });

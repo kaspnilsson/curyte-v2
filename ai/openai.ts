@@ -78,3 +78,48 @@ Assessment:
 Differentiation:
 {differentiation}
 `);
+
+export const generatePlanBodyPrompt = PromptTemplate.fromTemplate(`
+You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. You are creating a lesson plan that matches the query.
+
+Generate and return three new sections for the lesson plan:
+- Instructional procedures: details the lesson's activities, including the time allotted for each activity
+- Assessment: three questions that can be used to measure student progress throughout the lesson, and a sample answer key
+- Differentiation and adaptations: explains how the lesson could be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented
+
+Ensure that the plan adheres strictly to the idea provided, and achieves the learning objectives.
+----
+Lesson plan idea:
+{question}
+----
+Standards & objectives:
+{standards}`);
+
+export const reflectPromptSimpleInput =
+  PromptTemplate.fromTemplate(`You are a wonderful, creative, engaging teacher who prioritizes students from diverse backgrounds. You are creating a lesson plan.
+
+A completed lesson plan is defined as:
+- A standalone title
+- A markdown table with the grade level, subject, and relevant academic standards (two rows, three columns).
+- A section called "Learning objectives" that details the lesson's objectives and goals aligned with these standards
+- A section called "Materials and resources" that details the teaching methods, activities, discussions, and interactive elements that will be utilized to reach the lesson's objectives
+- A section called "Instructional procedures" that details the lesson's activities, including the time allotted for each activity
+- A section called "Assessment" with three questions that can be used to measure student progress throughout the lesson, and a sample answer key
+- A section called "Differentiation and adaptations" that explains how the lesson could be modified or adapted to meet the diverse learning needs of all students, including those with special needs or those who are gifted and talented.
+
+Using the below context, assemble and return the completed lesson plan. Ensure the content is sufficiently explained for the audience. Output MUST be a completed lesson plan formatted using markdown.
+----
+Lesson plan idea:
+{question}
+----
+Standards & objectives:
+{standards}
+----
+Plan:
+{plan}`);
+
+export const formatPrompt =
+  PromptTemplate.fromTemplate(`Reformat the lesson plan using markdown.
+---
+Plan:
+{plan}`);
